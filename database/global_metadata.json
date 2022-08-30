@@ -1,0 +1,175 @@
+{
+    "version": 2,
+    "keys": [
+        "ACDD",
+        "name",
+        "required"
+    ],
+    "data": {
+        "318211520806364727": {
+            "name": "Title",
+            "ACDD": "title",
+            "required": true
+        },
+        "103635848456058539": {
+            "name": "Abstract ",
+            "ACDD": "summary",
+            "required": true
+        },
+        "442385042757337709": {
+            "name": "keywords",
+            "ACDD": "keywords",
+            "required": true
+        },
+        "289772503827451972": {
+            "name": "Conventions",
+            "ACDD": "Conventions",
+            "required": true
+        },
+        "434187413391544843": {
+            "name": "keywords vocabulary",
+            "ACDD": "keywords_vocabulary",
+            "required": false
+        },
+        "171410786686087596": {
+            "name": "Principal investigator (PI) ",
+            "ACDD": "creator_name",
+            "required": true
+        },
+        "282822344204295373": {
+            "name": "PI email ",
+            "ACDD": "creator_email",
+            "required": true
+        },
+        "272401218340247882": {
+            "name": "PI institution \t",
+            "ACDD": "institution",
+            "required": true
+        },
+        "108468479721293546": {
+            "name": "Dataset start time",
+            "ACDD": "time_coverage_start",
+            "required": true
+        },
+        "337986221665008693": {
+            "name": "Dataset end time ",
+            "ACDD": "time_coverage_end",
+            "required": true
+        },
+        "230583135807951479": {
+            "name": "Dataset northernmost latitude",
+            "ACDD": "geospatial_lat_max",
+            "required": true
+        },
+        "820562241400828723": {
+            "name": "Dataset southernmost latitude",
+            "ACDD": "geospatial_lat_min",
+            "required": true
+        },
+        "193506009447060316": {
+            "name": "Dataset latitude units",
+            "ACDD": "geospatial_lat_units",
+            "required": true
+        },
+        "262392469314192544": {
+            "name": "Dataset easternmost longitude",
+            "ACDD": "geospatial_lon_min",
+            "required": true
+        },
+        "332244451917070423": {
+            "name": "Dataset westernmost longitude",
+            "ACDD": "geospatial_lon_max",
+            "required": true
+        },
+        "318289493922332648": {
+            "name": "Dataset longitude units",
+            "ACDD": "geospatial_lon_units",
+            "required": true
+        },
+        "223083513123627135": {
+            "name": "date created",
+            "ACDD": "date_created",
+            "required": true
+        },
+        "561607596174882802": {
+            "name": "Platform",
+            "ACDD": "platform",
+            "required": true
+        },
+        "777623037193859613": {
+            "name": "Project long name ",
+            "ACDD": "project",
+            "required": false
+        },
+        "180309392399192511": {
+            "name": "License",
+            "ACDD": "license",
+            "required": true
+        },
+        "246120257895475137": {
+            "name": "Dataset version",
+            "ACDD": "product_version",
+            "required": true
+        },
+        "120919551033772025": {
+            "name": "Data center (URL)",
+            "ACDD": "publisher_url",
+            "required": false
+        },
+        "142670370264954456": {
+            "name": "Creator (URL)",
+            "ACDD": "creator_url",
+            "required": false
+        },
+        "943372853521791110": {
+            "name": "standard_name_vocabulary",
+            "ACDD": "standard_name_vocabulary",
+            "required": false
+        },
+        "235171253337615796": {
+            "name": "time_coverage_duration",
+            "ACDD": "time_coverage_duration",
+            "required": true
+        },
+        "207824904258715067": {
+            "name": "time_coverage_resolution",
+            "ACDD": "time_coverage_resolution",
+            "required": true
+        },
+        "179891798746901913": {
+            "name": "id",
+            "ACDD": "id",
+            "required": false
+        },
+        "313269172128349834": {
+            "name": "processing_level",
+            "ACDD": "processing_level",
+            "required": false
+        },
+        "138777501444023809": {
+            "name": "geospatial_vertical_max",
+            "ACDD": "geospatial_vertical_max",
+            "required": false
+        },
+        "452564595407081584": {
+            "name": "geospatial_vertical_min",
+            "ACDD": "geospatial_vertical_min",
+            "required": false
+        },
+        "306281657332465461": {
+            "name": "geospatial_vertical_positive",
+            "ACDD": "geospatial_vertical_positive",
+            "required": false
+        },
+        "195807002331270730": {
+            "name": "geospatial_vertical_resolution",
+            "ACDD": "geospatial_vertical_resolution",
+            "required": false
+        },
+        "428326360379874009": {
+            "name": "geospatial_vertical_units",
+            "ACDD": "geospatial_vertical_units",
+            "required": false
+        }
+    }
+}

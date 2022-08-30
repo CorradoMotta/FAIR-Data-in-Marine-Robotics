@@ -1,0 +1,101 @@
+,,,,,,,,,,
+,,"Here we list the minimum number of global metadata that we would like to attach to any future mission. The name of the metadata is taken from SIOS (Svalbard Integrated Arctic Earth Observing System) when present. Then the ACDD name, the OGC CSW name, and the ISO19115 names are also reported. Color green means that the metadata should be mandatory, yellow optional, red not included, blue will be included in the future.",,,,,,,,
+,,,,,,,,,,
+,,Name,Description,ISO19115 Name,M-O-NI,ACDD name,OGC CSW,M for ISO?,M for SIOS?,Comments
+,,Title,A brief title for the dataset.,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString,M,title,Title,yes,yes,
+,,Abstract ,"A short summary of the process of developing the dataset, the content and potential linkages etc.",/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract/gco:CharacterString,M,summary,Abstract ,yes,yes,
+,,keywords,A comma separated list of key words and phrases.,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString,M,keywords,Subject,no,yes,Note that ACDD and ISO has two field for keywords: one for the keywords and one to report the dictionary used for those keywords. SIOS only has one field. This is because SIOS requires GCMD Science keywords to be used. Link: https://www.earthdata.nasa.gov/learn/find-data/idn/gcmd-keywords
+,,Conventions,"A comma-separated list of the conventions that are followed by the dataset. For files that follow this version of ACDD, include the string 'ACDD-1.3'. (This attribute is described in the NetCDF Users Guide.)",NOT FOUND,M,Conventions,-,no,no,
+,,keywords vocabulary,"If you are following a guideline for the words/phrases in your ""keywords"" attribute, put the name of that guideline here.",/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString,O,keywords_vocabulary,-,no,no,Note that ACDD and ISO has two field for keywords: one for the keywords and one to report the dictionary used for those keywords. SIOS only has one field. This is because SIOS requires GCMD Science keywords to be used. Link: https://www.earthdata.nasa.gov/learn/find-data/idn/gcmd-keywords
+,,Principal investigator (PI) ,Name of the PI,"/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString
+CI_RoleCode=""originator""",M,creator_name,-,no,yes,
+,,PI email ,Email to the PI,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString,M,creator_email,-,no,yes,
+,,PI institution 	,Affiliation of the PI,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString,M,institution,-,no,yes,
+,,Dataset start time,ISO8601 reference for the dataset,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:beginPosition,M,time_coverage_start,,no,yes,"ISO 8601:2004 date format, preferably the extended format: YYYY-MM-DDThh:mm:ss<zone>"
+,,Dataset end time ,ISO8601 reference for the dataset,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:endPosition,M,time_coverage_end,,no,yes,
+,,Dataset northernmost latitude,Geographical northernmost position of the dataset (rectangular box),/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal,M,geospatial_lat_max,BoundingBox,no,yes,"note that for ISO and ACDD coordinates box can be expressed using WKT as well, as a single field, or even as a simple vertical bounding box"
+,,Dataset southernmost latitude,Geographical southernmost position of the dataset (rectangular box),/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude/gco:Decimal,M,geospatial_lat_min,BoundingBox,no,yes,
+,,Dataset latitude units,Further refinement of the geospatial bounding box can be provided by defining units,gmi:MI_Metadata/gmd:spatialRepresentationInfo/gmd:MD_Georectified/gmd:axisDimensionProperties/gmd:MD_Dimension/gmd:resolution/gco:Measure/@uom,M,geospatial_lat_units,-,no,not present?,
+,,Dataset easternmost longitude,"Geographical easternmost position of the dataset (rectangular box), positive east of Greenwich.",/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude/gco:Decimal,M,geospatial_lon_min,BoundingBox,no,yes,
+,,Dataset westernmost longitude,"Geographical westernmost position of the dataset (rectangular box), negative west of Greenwich.",/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:eastBoundLongitude/gco:Decimal,M,geospatial_lon_max,BoundingBox,no,yes,
+,,Dataset longitude units,Further refinement of the geospatial bounding box can be provided by defining units,/gmi:MI_Metadata/gmd:spatialRepresentationInfo/gmd:MD_Georectified/gmd:axisDimensionProperties/gmd:MD_Dimension/gmd:resolution/gco:Measure/@uom,M,geospatial_lon_units,-,no,not present?,
+,,date created,The date on which the data was created.,"/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:Date
+/gmd:dateType/gmd:CI_DateTypeCode=""creation""",M,date_created,-,yes,not present?,
+,,ISO Topic category,List of topic categories for the dataset,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/gmd:MD_TopicCategoryCode,O,-,-,yes?,optional,19 topic categories exists: https://www.ngdc.noaa.gov/wiki/index.php/ISO_Topic_Categories
+,,Dataset language,Language used in the dataset. Should be English,/gmi:MI_Metadata/gmd:language/gmd:LanguageCode,M,-,-,yes,yes,
+,,Platform,"Name of the platform(s) that supported the sensor data used to create this data set or product. Platforms can be of any type, including satellite, ship, station, aircraft or other.",NOT FOUND,M,platform,-,no,no,Note that ACDD also provides a field named platform_vocabulary to specify the vocabulary used. Where should we provide the dictionary?
+,,Project long name ,"The scientific project that produced the data. multiple
+names to be separated by comma.","/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:aggregationInfo/gmd:MD_AggregateInformation/gmd:aggregateDataSetName/gmd:CI_Citation/gmd:title/gco:CharacterString
+DS_AssociationTypeCode=""largerWorkCitation"" and DS_InitiativeTypeCode=""project""
+and/or
+/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString with gmd:MD_KeywordTypeCode=""project""",O,project,-,no,no,"SIOS also has Project short name, for an Acronym for the project."
+,,License,Describe the restrictions to data access and distribution.,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation/gco:CharacterString,M,license,-,no,no,"SIOS recommends Creative Commons BY which ensures proper
+attribution of data providers."
+,,Dataset version,"Version identifier of the data file or product as assigned by the data creator. For example, a new algorithm or methodology could result in a new product_version.",NOT FOUND,M,product_version,-,no,no,
+,,Data center (URL),URL to the data center hosting the data.,"/gmi:MI_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL
+and/or
+/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL
+CI_RoleCode=""publisher""",O,publisher_url,-,no,,
+,,Creator (URL),URL to creator or to information,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL,O,creator_url,-,no,no,"SIOS does not have such URL but requires two other URLs, Data access (URL) and Related information (URL). Maybe one can be mapped"
+,,standard_name_vocabulary,The name of the controlled vocabulary from which variable standard names are taken.,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString,O,standard_name_vocabulary,,no,no,
+,,time_coverage_duration,"Describes the duration of the data set. Use ISO 8601:2004 duration format, preferably the extended format as recommended in the Attribute Content Guidance section.",/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:beginPosition,M,time_coverage_duration,,,,
+,,time_coverage_resolution,"Describes the targeted time period between each value in the data set. Use ISO 8601:2004 duration format, preferably the extended format as recommended in the Attribute Content Guidance section.",NOT FOUND,M,time_coverage_resolution,,,,
+,,id,"	An identifier for the data set, provided by and unique within its naming authority. The combination of the ""naming authority"" and the ""id"" should be globally unique, but the id can be globally unique by itself also. IDs can be URLs, URNs, DOIs, meaningful text strings, a local key, or any other unique string of characters. The id should not include white space characters.",/gmi:MI_Metadata/gmd:fileIdentifier/gco:CharacterString,O,id,,,,
+,,processing_level,A textual description of the processing (or quality control) level of the data.,NOT FOUND,O,processing_level,,,,
+,,geospatial_vertical_max,Geospatial vertical information. All of them are also contained in ACDD.,	/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:verticalElement/gmd:EX_VerticalExtent/gmd:maximumValue/gco:Real,O,geospatial_vertical_max,,,,
+,,geospatial_vertical_min,Geospatial vertical information. All of them are also contained in ACDD.,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:verticalElement/gmd:EX_VerticalExtent/gmd:minimumValue/gco:Real,O,geospatial_vertical_min,,,,
+,,geospatial_vertical_positive,Geospatial vertical information. All of them are also contained in ACDD.,NOT FOUND,O,geospatial_vertical_positive,,,,
+,,geospatial_vertical_resolution,Geospatial vertical information. All of them are also contained in ACDD.,NOT FOUND,O,geospatial_vertical_resolution,,,,
+,,geospatial_vertical_units,Geospatial vertical information. All of them are also contained in ACDD.,/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:verticalElement/gmd:EX_VerticalExtent/gmd:verticalCRS,O,geospatial_vertical_units,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,Elements found on SIOS but not on ACDD or ISO:,Description,Comments,,,,,,
+,,character set,UTF-8,present also in ISO,,,,,,
+,,PI address,Postal address of the PI,,,,,,,
+,,Dataset production status,See code list at the end of SIOS doc,Could be acttually mapped to processing_level or history,,,,,,
+,,Access constraint,See code list at the end of SIOS doc,,,,,,,
+,,Activity type,See code list at the end of SIOS doc,,,,,,,
+,,Distribution format,which format?,Probably on ISO,,,,,,
+,,data access(URL)," An URL to the dataset.",Probably on ISO Data Center (URL),,,,,,
+,,Data access (type),"A specification of the data access protocol, e.g. HTTP (for direct
+download), OPeNDAP, OGC WMS.",,,,,,,
+,,Dataset citation,A citation string for the dataset.,,,,,,,
+,,Project short name,Acronym for the project.,ISO and ACDD have project name only,,,,,,
+,,Quality statement,Keywords indicating the quality control of the dataset,,,,,,,
+,,,,,,,,,,
+,,Elements found in copernicus example but not SIOS,Description,Comments,,,,,,
+,,data_issued,,,,,,,,
+,,data_modified,,,,,,,,
+,,Metadata_Conventions,,Not used anymore in latest ACDD version,,,,,,
+,,cdm_data_type ,"The data type, as derived from Unidata's Common Data Model Scientific Data types and understood by THREDDS. (This is a THREDDS ""dataType"", and is different from the CF NetCDF attribute 'featureType', which indicates a Discrete Sampling Geometry file in CF.)",Probably can be mapped to distribution format of SIoS!,,,,,,
+,,comment,"Miscellaneous information about the data, not captured elsewhere. This attribute is defined in the CF Conventions.",/gmi:MI_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:supplementalInformation,,,,,,
+,,contact,Service desk,not present on ACDD neither,,,,,,
+,,geospatial_lat_resolution,"Information about the targeted spacing of points in latitude. Recommend describing resolution as a number value followed by the units. Examples: '100 meters', '0.1 degree'",same for lon,,,,,,
+,,history,Provides an audit trail for modifications to the original data. This attribute is also in the NetCDF Users Guide: ,,,,,,,
+,,references,Published or web-based references that describe the data or methods used to produce it. Recommend URIs (such as a URL or DOI) for papers or other references. This attribute is defined in the CF conven,Can be mapped to one of the URL required by SIOS.,,,,,,
+,,software_version,software version,Added by copernicus only,,,,,,
+,,source,"The method of production of the original data. If it was model-generated, source should name the model and its version. If it is observational, source should characterize it. This attribute is defined in the CF Conventions. Examples: 'temperature from CTD #1234'; 'world model v.0.1'.",present also on acdd. Might be mapped to activity type,,,,,,
+,,ssalto_duacs_comment,,no idea,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,Elements found in ACDD and ISO only,Description,Comments,,,,,,
+,,naming_authority,The organization that provides the initial id (see above) for the dataset. The naming authority should be uniquely specified by this attribute. We recommend using reverse-DNS naming for the naming authority; URIs are also acceptable. Example: 'edu.ucar.unidata'.,,,,,,,
+,,acknowledgement,A place to acknowledge various types of support for the project that produced this data.,,,,,,,
+,,publisher_name,"The name of the person (or other entity specified by the publisher_type attribute) responsible for publishing the data file or product to users, with its current metadata and format.",,,,,,,
+,,publisher_email,"The email address of the person (or other entity specified by the publisher_type attribute) responsible for publishing the data file or product to users, with its current metadata and format.",,,,,,,
+,,"geospatial_bounds
+geospatial_bounds_crs
+geospatial_bounds_vertical_crs",To describe geographical extension with WKT format,,,,,,,
+,,"creator_type
+creator_institution
+publisher_type
+publisher_institution",further info on creator and publisher,,,,,,,
+,,program,"The overarching program(s) of which the dataset is a part. A program consists of a set (or portfolio) of related and possibly interdependent projects that meet an overarching objective. Examples: 'GHRSST', 'NOAA CDR', 'NASA EOS', 'JPSS', 'GOES-R'.",,,,,,,
+,,"contributor_name
+contributor_role"," name and role of any individuals, projects, or institutions that contributed to the creation of this data. ",,,,,,,
+,,date_metadata_modified,"The date on which the metadata was last modified. The ISO 8601:2004 extended date format is recommended, as described in the Attributes Content Guidance section.",,,,,,,
+,,"instrument
+instrument_vocabulary",Name of the contributing instrument(s) or sensor(s) used to create this data set or product. Indicate controlled vocabulary used in instrument_vocabulary.,,,,,,,
+,,metadata_link,A URL that gives the location of more complete metadata. A persistent URL is recommended for this attribute.,,,,,,,
