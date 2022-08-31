@@ -68,20 +68,46 @@
              
   <section id="welcome-to-fair-data-in-marine-robotics-s-documentation">
 <h1>Welcome to FAIR data in marine robotics’s documentation!<a class="headerlink" href="#welcome-to-fair-data-in-marine-robotics-s-documentation" title="Permalink to this headline"></a></h1>
-<p><em>Author</em>: Corrado Motta (<a class="reference external" href="mailto:corradomotta92&#37;&#52;&#48;gmail&#46;com">corradomotta92<span>&#64;</span>gmail<span>&#46;</span>com</a>)</p>
-<p>The aim of this documentation is to describe how to make robotic data FAIR (Findability, Accessibility, Interoperability, and Reusability) by using a set of tools and script defined in python.</p>
-<p>See it on <a class="reference external" href="https://github.com/CorradoMotta/FAIR-data">GitHub</a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Author</p></th>
+<th class="head"><p>Mail</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Corrado Motta</p></td>
+<td><p><a class="reference external" href="mailto:corradomotta92&#37;&#52;&#48;gmail&#46;com">corradomotta92<span>&#64;</span>gmail<span>&#46;</span>com</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Roberta Ferretti</p></td>
+<td><p><a class="reference external" href="mailto:roberta&#46;ferretti&#37;&#52;&#48;cnr&#46;it">roberta<span>&#46;</span>ferretti<span>&#64;</span>cnr<span>&#46;</span>it</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Simona Aracri</p></td>
+<td><p><a class="reference external" href="mailto:simona&#46;aracri&#37;&#52;&#48;cnr&#46;it">simona<span>&#46;</span>aracri<span>&#64;</span>cnr<span>&#46;</span>it</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>The aim of this documentation is to describe how to make robotic data FAIR (Findable, Accessible, Interoperable, and Reusable) by using a set of tools and scripts defined in python.</p>
+<p>See it on <a class="reference external" href="https://github.com/CorradoMotta/FAIR-data">GitHub</a>!</p>
 <section id="status">
 <h2>Status<a class="headerlink" href="#status" title="Permalink to this headline"></a></h2>
 <p>This is a work in progress. At the time of writing, this repository contains two notebooks:</p>
 <ol class="arabic simple">
 <li><p><em>database.ipynb</em> : It shows how to create a light database in JSON format. Such database are used to store the standard names of global variables and the standard attributes of robotic and scientific variables. The products of such notebook are stored in the folder <code class="docutils literal notranslate"><span class="pre">database</span></code> and are used to fill the NetCDF files with standardized metadata.</p></li>
-<li><p><em>netcdf_conventions.ipynb</em>: It aims to show how to add and possibly extract descriptive and domain specific metadata from NetCDF files using python. It takes raw data in input, from folder <code class="docutils literal notranslate"><span class="pre">data</span></code> and creates FAIR NetCDF and ISO-199115-2 files in output. The products are saved in folder <code class="docutils literal notranslate"><span class="pre">results</span></code>. All folders and files can be modified using the configuration file in the <code class="docutils literal notranslate"><span class="pre">conf</span></code> folder. More information are contained directly in the notebook.</p></li>
+<li><p><em>netcdf_conventions.ipynb</em>: It aims to show how to add and possibly extract descriptive and domain specific metadata from NetCDF files using python. It takes raw data in input, from folder <code class="docutils literal notranslate"><span class="pre">data</span></code> and creates FAIR NetCDF and ISO-199115-2 files in output. The products are saved in folder <code class="docutils literal notranslate"><span class="pre">results</span></code>. All folders and files can be modified using the configuration file in the <code class="docutils literal notranslate"><span class="pre">conf</span></code> folder. More information are contained directly in the notebook and in the next sections of this documentation.</p></li>
 </ol>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="global_metadata.html">Global Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global_metadata.html">Global Metadata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="global_metadata.html#mandatory-attributes">Mandatory attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_metadata.html#optional-attributes">Optional attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_metadata.html#integration-and-metadata-check">Integration and metadata check</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="variable_metadata.html">Variable Metadata</a></li>
 </ul>
 </div>

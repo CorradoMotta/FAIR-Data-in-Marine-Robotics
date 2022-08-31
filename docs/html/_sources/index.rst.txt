@@ -6,11 +6,20 @@
 Welcome to FAIR data in marine robotics's documentation!
 ********************************************************
 
-*Author*: Corrado Motta (corradomotta92@gmail.com)
++------------------------+--------------------------+
+| Author                 | Mail                     |
++========================+==========================+
+| Corrado Motta          | corradomotta92@gmail.com |
++------------------------+--------------------------+
+| Roberta Ferretti       | roberta.ferretti@cnr.it  |
++------------------------+--------------------------+
+| Simona Aracri          | simona.aracri@cnr.it     |
++------------------------+--------------------------+
 
-The aim of this documentation is to describe how to make robotic data FAIR (Findability, Accessibility, Interoperability, and Reusability) by using a set of tools and script defined in python.
 
-See it on GitHub_.
+The aim of this documentation is to describe how to make robotic data FAIR (Findable, Accessible, Interoperable, and Reusable) by using a set of tools and scripts defined in python.
+
+See it on GitHub_!
 
 .. _GitHub: https://github.com/CorradoMotta/FAIR-data
 
@@ -23,7 +32,7 @@ This is a work in progress. At the time of writing, this repository contains two
 1. *database.ipynb* : It shows how to create a light database in JSON format. Such database are used to store the standard names of global variables and the standard attributes of robotic and scientific variables. The products of such notebook are stored in the folder ``database`` and are used to fill the NetCDF files with standardized metadata.
 
 
-2. *netcdf_conventions.ipynb*: It aims to show how to add and possibly extract descriptive and domain specific metadata from NetCDF files using python. It takes raw data in input, from folder ``data`` and creates FAIR NetCDF and ISO-199115-2 files in output. The products are saved in folder ``results``. All folders and files can be modified using the configuration file in the ``conf`` folder. More information are contained directly in the notebook.
+2. *netcdf_conventions.ipynb*: It aims to show how to add and possibly extract descriptive and domain specific metadata from NetCDF files using python. It takes raw data in input, from folder ``data`` and creates FAIR NetCDF and ISO-199115-2 files in output. The products are saved in folder ``results``. All folders and files can be modified using the configuration file in the ``conf`` folder. More information are contained directly in the notebook and in the next sections of this documentation.
 
 .. toctree::
    :caption: Contents
