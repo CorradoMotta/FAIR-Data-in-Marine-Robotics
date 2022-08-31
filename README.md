@@ -1,4 +1,4 @@
-# FAIR data
+# FAIR data in marine robotics
 
 |Description	| Set of notebooks, scripts and modules to generate metadata in several formats, following FAIR principles. |
 | :-------------| :----------------------------------------------------------- |
