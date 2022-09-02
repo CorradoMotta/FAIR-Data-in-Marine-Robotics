@@ -6,167 +6,167 @@
         "required"
     ],
     "data": {
-        "318211520806364727": {
+        "279044288197399221": {
             "name": "Title",
             "ACDD": "title",
             "required": true
         },
-        "103635848456058539": {
-            "name": "Abstract ",
+        "213906951226198229": {
+            "name": "Abstract",
             "ACDD": "summary",
             "required": true
         },
-        "442385042757337709": {
+        "791214340600562101": {
             "name": "keywords",
             "ACDD": "keywords",
             "required": true
         },
-        "289772503827451972": {
+        "120066240019239394": {
             "name": "Conventions",
             "ACDD": "Conventions",
             "required": true
         },
-        "434187413391544843": {
+        "608991152962678001": {
             "name": "keywords vocabulary",
             "ACDD": "keywords_vocabulary",
             "required": false
         },
-        "171410786686087596": {
-            "name": "Principal investigator (PI) ",
+        "115919923363754254": {
+            "name": "Principal investigator (PI)",
             "ACDD": "creator_name",
             "required": true
         },
-        "282822344204295373": {
-            "name": "PI email ",
+        "756025570617206162": {
+            "name": "PI email",
             "ACDD": "creator_email",
             "required": true
         },
-        "272401218340247882": {
-            "name": "PI institution \t",
+        "291739403953914588": {
+            "name": "PI institution",
             "ACDD": "institution",
             "required": true
         },
-        "108468479721293546": {
+        "187783064609804349": {
             "name": "Dataset start time",
             "ACDD": "time_coverage_start",
             "required": true
         },
-        "337986221665008693": {
-            "name": "Dataset end time ",
+        "502669934509734969": {
+            "name": "Dataset end time",
             "ACDD": "time_coverage_end",
             "required": true
         },
-        "230583135807951479": {
+        "180832705007972068": {
             "name": "Dataset northernmost latitude",
             "ACDD": "geospatial_lat_max",
             "required": true
         },
-        "820562241400828723": {
+        "269772756145656946": {
             "name": "Dataset southernmost latitude",
             "ACDD": "geospatial_lat_min",
             "required": true
         },
-        "193506009447060316": {
+        "269790983251763399": {
             "name": "Dataset latitude units",
             "ACDD": "geospatial_lat_units",
             "required": true
         },
-        "262392469314192544": {
+        "212551232405185467": {
             "name": "Dataset easternmost longitude",
             "ACDD": "geospatial_lon_min",
             "required": true
         },
-        "332244451917070423": {
+        "109599835939304522": {
             "name": "Dataset westernmost longitude",
             "ACDD": "geospatial_lon_max",
             "required": true
         },
-        "318289493922332648": {
+        "328311987028149380": {
             "name": "Dataset longitude units",
             "ACDD": "geospatial_lon_units",
             "required": true
         },
-        "223083513123627135": {
+        "318874647510507390": {
             "name": "date created",
             "ACDD": "date_created",
             "required": true
         },
-        "561607596174882802": {
+        "999160008313624938": {
             "name": "Platform",
             "ACDD": "platform",
             "required": true
         },
-        "777623037193859613": {
-            "name": "Project long name ",
+        "400982416654214131": {
+            "name": "Project long name",
             "ACDD": "project",
             "required": false
         },
-        "180309392399192511": {
+        "112334479742859632": {
             "name": "License",
             "ACDD": "license",
             "required": true
         },
-        "246120257895475137": {
+        "536083999474643950": {
             "name": "Dataset version",
             "ACDD": "product_version",
             "required": true
         },
-        "120919551033772025": {
+        "319393655719220073": {
             "name": "Data center (URL)",
             "ACDD": "publisher_url",
             "required": false
         },
-        "142670370264954456": {
+        "235516441462338323": {
             "name": "Creator (URL)",
             "ACDD": "creator_url",
             "required": false
         },
-        "943372853521791110": {
+        "330453455212286032": {
             "name": "standard_name_vocabulary",
             "ACDD": "standard_name_vocabulary",
             "required": false
         },
-        "235171253337615796": {
+        "267189984369638250": {
             "name": "time_coverage_duration",
             "ACDD": "time_coverage_duration",
             "required": true
         },
-        "207824904258715067": {
+        "164910816229833288": {
             "name": "time_coverage_resolution",
             "ACDD": "time_coverage_resolution",
             "required": true
         },
-        "179891798746901913": {
+        "240644299796721203": {
             "name": "id",
             "ACDD": "id",
             "required": false
         },
-        "313269172128349834": {
+        "225102052191471850": {
             "name": "processing_level",
             "ACDD": "processing_level",
             "required": false
         },
-        "138777501444023809": {
+        "632163181580855629": {
             "name": "geospatial_vertical_max",
             "ACDD": "geospatial_vertical_max",
             "required": false
         },
-        "452564595407081584": {
+        "764060638735226932": {
             "name": "geospatial_vertical_min",
             "ACDD": "geospatial_vertical_min",
             "required": false
         },
-        "306281657332465461": {
+        "292545238307873550": {
             "name": "geospatial_vertical_positive",
             "ACDD": "geospatial_vertical_positive",
             "required": false
         },
-        "195807002331270730": {
+        "406618081474921614": {
             "name": "geospatial_vertical_resolution",
             "ACDD": "geospatial_vertical_resolution",
             "required": false
         },
-        "428326360379874009": {
+        "896116699379682440": {
             "name": "geospatial_vertical_units",
             "ACDD": "geospatial_vertical_units",
             "required": false

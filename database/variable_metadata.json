@@ -1,0 +1,93 @@
+{
+    "version": 2,
+    "keys": [
+        "comment",
+        "coverage_content_type",
+        "long_name",
+        "standard_name",
+        "units",
+        "version"
+    ],
+    "data": {
+        "142370927997862961": {
+            "long_name": "latitude",
+            "standard_name": "latitude",
+            "units": "degree_north",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "Latitude measured by GPS",
+            "version": "1.0"
+        },
+        "230090397098164756": {
+            "long_name": "longitude",
+            "standard_name": "longitude",
+            "units": "degree_east",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "Longitude measured by GPS",
+            "version": "1.0"
+        },
+        "270086771257137250": {
+            "long_name": "platform_roll",
+            "standard_name": "platform_roll",
+            "units": "degree",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "yaw",
+            "version": "1.0"
+        },
+        "282034004767160426": {
+            "long_name": "platform_pitch",
+            "standard_name": "platform_pitch",
+            "units": "degree",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "roll",
+            "version": "1.0"
+        },
+        "107718942015158601": {
+            "long_name": "platform_yaw",
+            "standard_name": "platform_yaw",
+            "units": "degree",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "pitch",
+            "version": "1.0"
+        },
+        "177067960233718670": {
+            "long_name": "platform_roll_rate",
+            "standard_name": "platform_roll_rate",
+            "units": "degree s-1",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "roll rate (p)",
+            "version": "1.0"
+        },
+        "316691778823210545": {
+            "long_name": "platform_pitch_rate",
+            "standard_name": "platform_pitch_rate",
+            "units": "degree s-1",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "pitch rate (q)",
+            "version": "1.0"
+        },
+        "210827519873888005": {
+            "long_name": "platform_yaw_rate",
+            "standard_name": "platform_yaw_rate",
+            "units": "degree s-1",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "yaw rate (r)",
+            "version": "1.0"
+        },
+        "159050715918504639": {
+            "long_name": "platform_surge_rate",
+            "standard_name": "platform_surge_rate",
+            "units": "m s-1",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "surge [m\/s]",
+            "version": "1.0"
+        },
+        "287726622115476161": {
+            "long_name": "platform_sway_rate",
+            "standard_name": "platform_sway_rate",
+            "units": "m s-1",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "sway [m\/s]",
+            "version": "1.0"
+        }
+    }
+}
