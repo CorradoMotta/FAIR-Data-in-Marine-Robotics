@@ -2,174 +2,276 @@
     "version": 2,
     "keys": [
         "ACDD",
+        "auto",
+        "default",
+        "description",
         "name",
         "required"
     ],
     "data": {
-        "279044288197399221": {
+        "118098451827349611": {
             "name": "Title",
             "ACDD": "title",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "A brief title for the dataset",
+            "auto": false
         },
-        "213906951226198229": {
+        "139991172151815761": {
             "name": "Abstract",
             "ACDD": "summary",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "A short summary for dataset, the content and potential linkages etc.",
+            "auto": false
         },
-        "791214340600562101": {
+        "323152503416217632": {
             "name": "keywords",
             "ACDD": "keywords",
-            "required": true
+            "required": true,
+            "default": "unmanned marine vehicles,marine robotics,autonomous systems",
+            "description": "A comma separated list of key words and phrases",
+            "auto": false
         },
-        "120066240019239394": {
+        "229213504048293457": {
             "name": "Conventions",
             "ACDD": "Conventions",
-            "required": true
+            "required": true,
+            "default": "ACDD-1.3,CF-1.6",
+            "description": "A comma-separated list of the conventions that are followed by the dataset. For ACDD use 'ACDD-1.3'",
+            "auto": false
         },
-        "608991152962678001": {
+        "340235879380717886": {
             "name": "keywords vocabulary",
             "ACDD": "keywords_vocabulary",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "Guideline for the words\/phrases in your \"keywords\" attribute, if any",
+            "auto": false
         },
-        "115919923363754254": {
-            "name": "Principal investigator (PI)",
+        "227458236383744696": {
+            "name": "PI name",
             "ACDD": "creator_name",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Name of the PI",
+            "auto": false
         },
-        "756025570617206162": {
+        "316882851920624777": {
             "name": "PI email",
             "ACDD": "creator_email",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Email to the PI",
+            "auto": false
         },
-        "291739403953914588": {
+        "299470815716431060": {
             "name": "PI institution",
             "ACDD": "institution",
-            "required": true
+            "required": true,
+            "default": "CNR-INM",
+            "description": "Affiliation of the PI",
+            "auto": false
         },
-        "187783064609804349": {
+        "244269931658264344": {
             "name": "Dataset start time",
             "ACDD": "time_coverage_start",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "ISO8601 reference for the dataset",
+            "auto": true
         },
-        "502669934509734969": {
+        "119778206873871849": {
             "name": "Dataset end time",
             "ACDD": "time_coverage_end",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "ISO8601 reference for the dataset",
+            "auto": true
         },
-        "180832705007972068": {
+        "261351714526759897": {
             "name": "Dataset northernmost latitude",
             "ACDD": "geospatial_lat_max",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Geographical northernmost position of the dataset (rectangular box)",
+            "auto": true
         },
-        "269772756145656946": {
+        "295099776094425630": {
             "name": "Dataset southernmost latitude",
             "ACDD": "geospatial_lat_min",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Geographical southernmost position of the dataset (rectangular box)",
+            "auto": true
         },
-        "269790983251763399": {
+        "241356004287904810": {
             "name": "Dataset latitude units",
             "ACDD": "geospatial_lat_units",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Further refinement of the box",
+            "auto": true
         },
-        "212551232405185467": {
+        "282066965116456868": {
             "name": "Dataset easternmost longitude",
             "ACDD": "geospatial_lon_min",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Geographical easternmost position of the dataset, positive east of Greenwich.",
+            "auto": true
         },
-        "109599835939304522": {
+        "296589397081964151": {
             "name": "Dataset westernmost longitude",
             "ACDD": "geospatial_lon_max",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Geographical westernmost position of the dataset, negative west of Greenwich.",
+            "auto": true
         },
-        "328311987028149380": {
+        "218641823269628700": {
             "name": "Dataset longitude units",
             "ACDD": "geospatial_lon_units",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Further refinement of the box",
+            "auto": true
         },
-        "318874647510507390": {
+        "928726722570501013": {
             "name": "date created",
             "ACDD": "date_created",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "The date on which the data was created.",
+            "auto": true
         },
-        "999160008313624938": {
+        "187795552802627976": {
             "name": "Platform",
             "ACDD": "platform",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Name of the platform(s) that supported the sensor data used to create this data set or product.",
+            "auto": false
         },
-        "400982416654214131": {
+        "627365998077965318": {
             "name": "Project long name",
             "ACDD": "project",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "The scientific project that produced the data. Multiple names to be separated by comma.",
+            "auto": false
         },
-        "112334479742859632": {
+        "214196903775841504": {
             "name": "License",
             "ACDD": "license",
-            "required": true
+            "required": true,
+            "default": "Creative Commons",
+            "description": "Describe the restrictions to data access and distribution",
+            "auto": false
         },
-        "536083999474643950": {
+        "118296306120960165": {
             "name": "Dataset version",
             "ACDD": "product_version",
-            "required": true
+            "required": true,
+            "default": "1",
+            "description": "Version identifier of the data file or product as assigned by the data creator",
+            "auto": false
         },
-        "319393655719220073": {
+        "320815984145485703": {
             "name": "Data center (URL)",
             "ACDD": "publisher_url",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "URL to the data center hosting the data",
+            "auto": false
         },
-        "235516441462338323": {
+        "610594901872595864": {
             "name": "Creator (URL)",
             "ACDD": "creator_url",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "URL to creator or to information",
+            "auto": false
         },
-        "330453455212286032": {
+        "124901352480694200": {
             "name": "standard_name_vocabulary",
             "ACDD": "standard_name_vocabulary",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "The name of the controlled vocabulary from which variable standard names are taken",
+            "auto": false
         },
-        "267189984369638250": {
+        "119227646804667990": {
             "name": "time_coverage_duration",
             "ACDD": "time_coverage_duration",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Describes the duration of the data set. Use ISO 8601:2004 duration format",
+            "auto": true
         },
-        "164910816229833288": {
+        "231327694375466925": {
             "name": "time_coverage_resolution",
             "ACDD": "time_coverage_resolution",
-            "required": true
+            "required": true,
+            "default": "",
+            "description": "Describes the targeted time period between each value in the data set. Use ISO 8601:2004 duration format",
+            "auto": true
         },
-        "240644299796721203": {
+        "234598890633016435": {
             "name": "id",
             "ACDD": "id",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "An identifier for the data set, it can be the DOI as well",
+            "auto": false
         },
-        "225102052191471850": {
+        "732034680725432126": {
             "name": "processing_level",
             "ACDD": "processing_level",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "A textual description of the processing (or quality control) level of the data",
+            "auto": false
         },
-        "632163181580855629": {
+        "354737951906775165": {
             "name": "geospatial_vertical_max",
             "ACDD": "geospatial_vertical_max",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "Describes the numerically larger vertical limit",
+            "auto": false
         },
-        "764060638735226932": {
+        "224111352837970680": {
             "name": "geospatial_vertical_min",
             "ACDD": "geospatial_vertical_min",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "Describes the numerically smaller vertical limit",
+            "auto": false
         },
-        "292545238307873550": {
+        "538525094022118489": {
             "name": "geospatial_vertical_positive",
             "ACDD": "geospatial_vertical_positive",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "\"up\" or \"down\". If down, vertical values are interpreted as 'depth'",
+            "auto": false
         },
-        "406618081474921614": {
+        "236089437018549121": {
             "name": "geospatial_vertical_resolution",
             "ACDD": "geospatial_vertical_resolution",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "Further refinement of the box",
+            "auto": false
         },
-        "896116699379682440": {
+        "439777392787216401": {
             "name": "geospatial_vertical_units",
             "ACDD": "geospatial_vertical_units",
-            "required": false
+            "required": false,
+            "default": "",
+            "description": "Further refinement of the box",
+            "auto": false
         }
     }
 }

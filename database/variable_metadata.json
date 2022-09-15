@@ -9,84 +9,236 @@
         "version"
     ],
     "data": {
-        "142370927997862961": {
+        "336590390693271180": {
+            "long_name": "date",
+            "standard_name": "",
+            "units": "",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "Date in format yyyymmdd",
+            "version": "1.0"
+        },
+        "245479688150730311": {
+            "long_name": "time",
+            "standard_name": "time",
+            "units": "s",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "Time in format hhmmss.ms",
+            "version": "1.0"
+        },
+        "852129050816343194": {
             "long_name": "latitude",
             "standard_name": "latitude",
             "units": "degree_north",
             "coverage_content_type": "physicalMeasurement",
-            "comment": "Latitude measured by GPS",
+            "comment": "Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly.",
             "version": "1.0"
         },
-        "230090397098164756": {
+        "322512985147273601": {
             "long_name": "longitude",
             "standard_name": "longitude",
             "units": "degree_east",
             "coverage_content_type": "physicalMeasurement",
-            "comment": "Longitude measured by GPS",
+            "comment": "Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly.",
             "version": "1.0"
         },
-        "270086771257137250": {
+        "568881254479252365": {
+            "long_name": "projection_x_coordinate",
+            "standard_name": "projection_x_coordinate",
+            "units": "m",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "x indicates a vector component along the grid x-axis, when this is not true longitude, positive with increasing x.",
+            "version": "1.0"
+        },
+        "333662438403343170": {
+            "long_name": "projection_y_coordinate",
+            "standard_name": "projection_y_coordinate",
+            "units": "m",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "y indicates a vector component along the grid y-axis, when this is not true latitude, positive with increasing y.",
+            "version": "1.0"
+        },
+        "234798998180946574": {
+            "long_name": "horizontalAccuracy",
+            "standard_name": "",
+            "units": "m",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "Horizontal accuracy represents the radius of the margin of error of the measurement",
+            "version": "1.0"
+        },
+        "779540448955512278": {
+            "long_name": "llhPositionValidFlags",
+            "standard_name": "",
+            "units": "",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "Flag that indicates if the measurements is valid or not (1 for valid).",
+            "version": "1.0"
+        },
+        "309882367613928962": {
             "long_name": "platform_roll",
             "standard_name": "platform_roll",
             "units": "degree",
             "coverage_content_type": "physicalMeasurement",
-            "comment": "yaw",
+            "comment": "Roll rotation. The angle that identifies the rotation is usually represented with the phi letter.",
             "version": "1.0"
         },
-        "282034004767160426": {
+        "187365351414365688": {
             "long_name": "platform_pitch",
             "standard_name": "platform_pitch",
             "units": "degree",
             "coverage_content_type": "physicalMeasurement",
-            "comment": "roll",
+            "comment": "Pitch rotation. The angle that identifies the rotation is usually represented with the theta letter.",
             "version": "1.0"
         },
-        "107718942015158601": {
+        "272591614745464802": {
             "long_name": "platform_yaw",
             "standard_name": "platform_yaw",
             "units": "degree",
             "coverage_content_type": "physicalMeasurement",
-            "comment": "pitch",
+            "comment": "Yaw is a rotation about the local vertical axis.The angle that identifies the rotation is usually represented with the psi letter.",
             "version": "1.0"
         },
-        "177067960233718670": {
+        "302325410569769245": {
+            "long_name": "platform_surge_rate_fore",
+            "standard_name": "platform_surge_rate_fore",
+            "units": "m s-1",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "Surge rate is the rate of displacement along an axis that is perpendicular to the local vertical axis and is coplanar with the nominal forward motion direction of the platform. Typically represented with the u letter.",
+            "version": "1.0"
+        },
+        "691727805093451570": {
+            "long_name": "platform_sway_rate_starboard",
+            "standard_name": "platform_sway_rate_starboard",
+            "units": "m s-1",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "Sway rate is the rate of displacement along an axis that is perpendicular to both the local vertical axis and the nominal forward motion direction of the platform. Typycally represented with the v letter.",
+            "version": "1.0"
+        },
+        "190933095028761358": {
+            "long_name": "platform_heave_rate_down",
+            "standard_name": "platform_heave_rate_down",
+            "units": "m s-1",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "Heave rate is the rate of displacement along the local vertical axis. Down indicates that positive values of heave rate represent the platform moving down as viewed by an observer on top of the platform facing forward.",
+            "version": "1.0"
+        },
+        "105426505594825606": {
+            "long_name": "platform_speed_accuracy",
+            "standard_name": "",
+            "units": "m s-1",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "Speed accuracy represents the standard deviation of the measured speed.",
+            "version": "1.0"
+        },
+        "232026267693803368": {
+            "long_name": "platform_track",
+            "standard_name": "",
+            "units": "degree",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "Heading accuracy representes the standard deviation of the measured heading.",
+            "version": "1.0"
+        },
+        "302508809212158526": {
+            "long_name": "platform_speed_validity",
+            "standard_name": "",
+            "units": "",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "Flag that indicates if the measured velocity is valid or not (1 for valid).",
+            "version": "1.0"
+        },
+        "316122718171419937": {
             "long_name": "platform_roll_rate",
             "standard_name": "platform_roll_rate",
             "units": "degree s-1",
             "coverage_content_type": "physicalMeasurement",
-            "comment": "roll rate (p)",
+            "comment": "Roll rate is the rate of rotation about an axis that is perpendicular to the local vertical axis and is coplanar with the nominal forward motion direction of the platform. Typically represented with the p letter.",
             "version": "1.0"
         },
-        "316691778823210545": {
+        "184139864536245076": {
             "long_name": "platform_pitch_rate",
             "standard_name": "platform_pitch_rate",
             "units": "degree s-1",
             "coverage_content_type": "physicalMeasurement",
-            "comment": "pitch rate (q)",
+            "comment": "Pitch rate is the rate of rotation about an axis that is perpendicular to both the local vertical axis and the nominal forward motion direction of the platform. Typically represented with the \"q\" letter.",
             "version": "1.0"
         },
-        "210827519873888005": {
+        "284429516620639623": {
             "long_name": "platform_yaw_rate",
             "standard_name": "platform_yaw_rate",
             "units": "degree s-1",
             "coverage_content_type": "physicalMeasurement",
-            "comment": "yaw rate (r)",
+            "comment": "Yaw rate is the rate of rotation about the local vertical axis. Typically represented with the r letter.",
             "version": "1.0"
         },
-        "159050715918504639": {
-            "long_name": "platform_surge_rate",
-            "standard_name": "platform_surge_rate",
-            "units": "m s-1",
+        "220543261344132845": {
+            "long_name": "platform_surge_acceleration_fore",
+            "standard_name": "",
+            "units": "m s-2",
             "coverage_content_type": "auxiliaryInformation",
-            "comment": "surge [m\/s]",
+            "comment": "Surge acceleration is the acceleration given along an axis that is perpendicular to the local vertical axis and is coplanar with the nominal forward motion direction of the platform.",
             "version": "1.0"
         },
-        "287726622115476161": {
-            "long_name": "platform_sway_rate",
-            "standard_name": "platform_sway_rate",
-            "units": "m s-1",
+        "121295958941471453": {
+            "long_name": "platform_sway_acceleration_starboard",
+            "standard_name": "",
+            "units": "m s-2",
             "coverage_content_type": "auxiliaryInformation",
-            "comment": "sway [m\/s]",
+            "comment": "Sway acceleration is the is the acceleration given along an axis that is perpendicular to both the local vertical axis and the nominal forward motion direction of the platform.",
+            "version": "1.0"
+        },
+        "154578736962282619": {
+            "long_name": "platform_heave_acceleration_down",
+            "standard_name": "",
+            "units": "m s-2",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "Heave acceleration is theis the acceleration given along the local vertical axis. Down indicates that positive values of heave rate represent the platform moving down as viewed by an observer on top of the platform facing forward.",
+            "version": "1.0"
+        },
+        "250346480147005353": {
+            "long_name": "azimuth_angle_reference",
+            "standard_name": "",
+            "units": "degree",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "The reference value of the given platform azimuth angle .",
+            "version": "1.0"
+        },
+        "830762274249675656": {
+            "long_name": "azimuth_angle",
+            "standard_name": "",
+            "units": "degree",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "Platform azimuth angle is the horizontal angle between the line of sight from the observation point to the platform and a reference direction at the observation point, which is often due north.",
+            "version": "1.0"
+        },
+        "189914476899905033": {
+            "long_name": "thruster_speed_reference",
+            "standard_name": "",
+            "units": "rpm",
+            "coverage_content_type": "auxiliaryInformation",
+            "comment": "The reference value of the given platform thrust speed .",
+            "version": "1.0"
+        },
+        "295513219268031242": {
+            "long_name": "thruster_speed",
+            "standard_name": "",
+            "units": "rpm",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "Platform thrust in rpm.",
+            "version": "1.0"
+        },
+        "220494603021719127": {
+            "long_name": "thruster_force",
+            "standard_name": "",
+            "units": "N",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "Platform force in Newton.",
+            "version": "1.0"
+        },
+        "278796581522330258": {
+            "long_name": "thruster_current",
+            "standard_name": "",
+            "units": "Nm",
+            "coverage_content_type": "physicalMeasurement",
+            "comment": "Current of the thrust.",
             "version": "1.0"
         }
     }
