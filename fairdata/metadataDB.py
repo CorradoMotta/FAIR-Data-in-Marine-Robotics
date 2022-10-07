@@ -299,6 +299,19 @@ class metadataDB:
         # TODO check if is different from existing one
         return self.db_pointer.update_by_id(id, updatedEntry)
 
+    def removeEntry(self, id):
+
+        """ Delete the specific entry.
+
+        Args:
+            id (str) : The database entry ID.
+
+        Returns:
+            dict: the deleted dictionary.
+        """
+
+        return self.db_pointer.delete_by_id(id)
+
     def getAll(self):
 
         """ Returns all elements.
