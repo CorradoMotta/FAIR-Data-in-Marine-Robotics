@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API documentation &mdash; FAIR data in marine robotics  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Variable Metadata" href="variable_metadata.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> FAIR data in marine robotics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="global_metadata.html">Global Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable_metadata.html">Variable Metadata</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#metadatadb">metadataDB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#other-information">Other information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FAIR data in marine robotics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>API documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-documentation">
+<h1><a class="toc-backref" href="#id1">API documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline"></a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#api-documentation" id="id1">API documentation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#metadatadb" id="id2">metadataDB</a></p>
+<ul>
+<li><p><a class="reference internal" href="#other-information" id="id3">Other information</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<span class="target" id="module-metadataDB"></span><section id="metadatadb">
+<h2><a class="toc-backref" href="#id2">metadataDB</a><a class="headerlink" href="#metadatadb" title="Permalink to this headline"></a></h2>
+<p>Author:         Corrado Motta
+Date:           10/2022</p>
+<p>This module is a customized wrapper of PysonDB-V2, which implements a Lightweight JSON based database.
+Through the functions of this module it is possible to add, remove, edit and visualize the
+metadata collected in the database.</p>
+<section id="other-information">
+<h3><a class="toc-backref" href="#id3">Other information</a><a class="headerlink" href="#other-information" title="Permalink to this headline"></a></h3>
+<p>This module requires the installation of PysonDB to work. Check <a class="reference external" href="https://pysondb.github.io/pysonDB-v2/">https://pysondb.github.io/pysonDB-v2/</a> for
+installing into your python environment.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="metadataDB.Error">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metadataDB.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.Error" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for exceptions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>str</em>) – Method in which the error occurred.</p></li>
+<li><p><strong>message</strong> (<em>str</em>) – Explanation of the error.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="metadataDB.metadataDB">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metadataDB.</span></span><span class="sig-name descname"><span class="pre">metadataDB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB" title="Permalink to this definition"></a></dt>
+<dd><p>Class that contains the PysonDB object.
+If the database is not existing, it creates the database,
+otherwise it connects to the existing file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<em>str</em>) – Path to the existing or new database.</p></li>
+<li><p><strong>unique_key</strong> (<em>str</em>) – Key that shall have a unique value in the entire dataset.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata_entry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.add" title="Permalink to this definition"></a></dt>
+<dd><p>Adds a new entry to the current database if it does not
+exist yet or if some of the values contained are different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>metadata_entry</strong> (<em>dict</em>) – Dictionary of the metadata entry.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if added, false if not (because it already exists).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.dict_exists">
+<span class="sig-name descname"><span class="pre">dict_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.dict_exists" title="Permalink to this definition"></a></dt>
+<dd><p>Returns true if the dictionary exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>item</strong> (<em>dict</em>) – The item to look for.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if present, false if not present.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.element_exists">
+<span class="sig-name descname"><span class="pre">element_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.element_exists" title="Permalink to this definition"></a></dt>
+<dd><p>Returns true if the element exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Which key should be used for the look up.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name that should be searched.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if present, false if not present.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.getAll">
+<span class="sig-name descname"><span class="pre">getAll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.getAll" title="Permalink to this definition"></a></dt>
+<dd><p>Returns all elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dict containing all elements.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.getById">
+<span class="sig-name descname"><span class="pre">getById</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.getById" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the database entry found for the required ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The database ID.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The dictionary of the element. None if not present.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.getEntry">
+<span class="sig-name descname"><span class="pre">getEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.getEntry" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the database entries found for the key value pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Which key should be used for the look up.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name that should be searched.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The dictionaries of the found entries. None if not present.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.getId">
+<span class="sig-name descname"><span class="pre">getId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.getId" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the database entry found for the required element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Which key should be used for the look up.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name that should be searched.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The dictionary of the element. None if not present.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.id_exists">
+<span class="sig-name descname"><span class="pre">id_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.id_exists" title="Permalink to this definition"></a></dt>
+<dd><p>Returns true if ID exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The id of the element.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if present, false if not present.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.removeEntry">
+<span class="sig-name descname"><span class="pre">removeEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.removeEntry" title="Permalink to this definition"></a></dt>
+<dd><p>Delete the specific entry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The database entry ID.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the deleted dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.unique_value_exists">
+<span class="sig-name descname"><span class="pre">unique_value_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.unique_value_exists" title="Permalink to this definition"></a></dt>
+<dd><p>Returns true if the value is already
+used by the unique key of one of the entries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – The value to look for.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if present, false if not present.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metadataDB.metadataDB.updateEntry">
+<span class="sig-name descname"><span class="pre">updateEntry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updatedEntry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.metadataDB.updateEntry" title="Permalink to this definition"></a></dt>
+<dd><p>Update the specific entry by passing a new dictionary.
+It can contain the whole set of keys value of any of the subset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em>) – The database entry ID.</p></li>
+<li><p><strong>updatedEntry</strong> (<em>dict</em>) – The new dictionary.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the updated dictionary.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="metadataDB.notUniqueError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metadataDB.</span></span><span class="sig-name descname"><span class="pre">notUniqueError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.notUniqueError" title="Permalink to this definition"></a></dt>
+<dd><p>Error that occur when more than one element is found in the database for a
+query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>str</em>) – Method in which the error occurred.</p></li>
+<li><p><strong>message</strong> (<em>str</em>) – Explanation of the error.</p></li>
+<li><p><strong>ids</strong> (<em>list</em>) – List of IDs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="metadataDB.uniqueKeyError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metadataDB.</span></span><span class="sig-name descname"><span class="pre">uniqueKeyError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.uniqueKeyError" title="Permalink to this definition"></a></dt>
+<dd><p>Error that occur when a new entry has an already existing value for the unique key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>str</em>) – Method in which the error occurred.</p></li>
+<li><p><strong>message</strong> (<em>str</em>) – Explanation of the error.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – The unique value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="variable_metadata.html" class="btn btn-neutral float-left" title="Variable Metadata" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Corrado Motta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

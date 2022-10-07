@@ -40,6 +40,7 @@ This is a work in progress. At the time of writing, this repository contains two
    
    global_metadata
    variable_metadata
+   Api
 
 Indices and tables
 ==================
