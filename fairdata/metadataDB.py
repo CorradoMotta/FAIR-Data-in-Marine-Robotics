@@ -140,6 +140,11 @@ class metadataDB:
                     print("{0} key with value <{1}> already exists! Use the updateEntry method to update the entry instead."
                         .format(self.unique,metadata_entry[self.unique]))
                     return False
+            else:
+                # do not check anything, just add
+                self.db_pointer.add(metadata_entry)
+                return True
+
 
         else:
             return False
