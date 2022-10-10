@@ -30,21 +30,23 @@ As we can see the first header line contains the custom name. The second one con
 
 .. code-block:: json
 
-	"271595412737": {
-		"long_name": "latitude",
-		"standard_name": "latitude",
-		"units": "degree_north",
+	"227918505505236705": {
+		"long_name": "platform_pitch",
+		"standard_name": "platform_pitch",
+		"units": "degree",
 		"coverage_content_type": "physicalMeasurement",
-		"comments": "Latitude measured by GPS"
+		"comment": "Pitch rotation. The angle that identifies the rotation is usually represented with the theta letter.",
+		"version": "1.0"
 	},
-	"32523223453": {
-		"long_name": "longitude",
-		"standard_name": "longitude",
-		"units": "degree_east",
+	"181265577651329655": {
+		"long_name": "platform_yaw",
+		"standard_name": "platform_yaw",
+		"units": "degree",
 		"coverage_content_type": "physicalMeasurement",
-		"comments": "Longitude measured by GPS"
+		"comment": "Yaw is a rotation about the local vertical axis.The angle that identifies the rotation is usually represented with the psi letter.",
+		"version": "1.0"
 	}
-
+	
 By retrieving the attributes using the ID, it can then fill the NETCDF and makes it FAIR-compliant. When the NetCDF is open, the variable will be visualized as follow:
 
 .. image:: images/variable_example.png

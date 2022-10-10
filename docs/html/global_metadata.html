@@ -46,6 +46,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="variable_metadata.html">Variable Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api.html">API documentation</a></li>
 </ul>
 
         </div>
@@ -265,34 +266,44 @@
 <section id="integration-and-metadata-check">
 <h2>Integration and metadata check<a class="headerlink" href="#integration-and-metadata-check" title="Permalink to this headline"></a></h2>
 <p>The notebook explains in details how to generate the NetCDF and add the global metadata.
-At the time of writing, the global metadata are set on a configuration file named <code class="docutils literal notranslate"><span class="pre">conf.ini</span></code>. Then, the configuration file is taken in input from the notebook script, and the attributes where a value is found are added to the NetCDF, using <code class="docutils literal notranslate"><span class="pre">xarray</span></code> python package. <strong>Note</strong> that this procedure will be changed in future, where the configuration file will be automatically generated during a mission, and pre-filled with valid values whenever possible. Furthermore, the generated global metadata are checked against the table shown above, to verify that all mandatory elements are included. To do so, a light JSON database is generated, which includes all mandatory and optional elements. The JSON database is very simple and looks as the following snippet:</p>
+At the time of writing, the global metadata are set on a configuration file named <code class="docutils literal notranslate"><span class="pre">conf.ini</span></code>. This file can be automatically generate from the interface that controls the vehicle. Then, the configuration file is taken in input from the notebook script, and the attributes where a value is found are added to the NetCDF, using <code class="docutils literal notranslate"><span class="pre">xarray</span></code> python package.</p>
+<p>Furthermore, the generated global metadata are checked against the table shown above, to verify that all mandatory elements are included. To do so, a light JSON database is generated, which includes all mandatory and optional elements. The JSON database is very simple and looks as the following snippet:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;103635848456058539&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Abstract &quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ACDD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;summary&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;657500993870255894&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Title&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ACDD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A brief title for the dataset&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;auto&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;442385042757337709&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;220784140157161391&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Abstract&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ACDD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;summary&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A short summary for dataset, the content and potential linkages etc.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;auto&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;338703899268240663&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;keywords&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;ACDD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;keywords&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;289772503827451972&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Conventions&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ACDD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Conventions&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unmanned marine vehicles,marine robotics,autonomous systems&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A comma separated list of key words and phrases&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;auto&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>At the moment, only three fields are saved. The name, the ACDD standard name and if it is mandatory. In this way, the validation is quickly done:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Opening JSON database</span>
-<span class="n">global_db</span> <span class="o">=</span> <span class="n">PysonDB</span><span class="p">(</span><span class="s1">&#39;database/global_metadata.json&#39;</span><span class="p">)</span>
+<p>At the moment, six fields are saved. The <strong>name</strong>, the <strong>ACDD</strong> standard name, if it is mandatorily <strong>required</strong>, the <strong>default</strong> value, if any, the <strong>description</strong> of the metadata, and if can be <strong>automatically</strong> generated from the dataset (e.g., Dataset northernmost latitude or Dataset start time). In this way, the validation is quickly done by using our own module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Opening JSON file</span>
+<span class="n">global_db</span> <span class="o">=</span> <span class="n">metadataDB</span><span class="o">.</span><span class="n">metadataDB</span><span class="p">(</span><span class="s1">&#39;database/global_metadata.json&#39;</span><span class="p">)</span>
 
 <span class="c1"># iterate over all the global metadata found in the database</span>
-<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">global_db</span><span class="o">.</span><span class="n">get_all</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">global_db</span><span class="o">.</span><span class="n">getAll</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 
-        <span class="c1"># filter out the optional ones</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">]):</span>
+        <span class="c1"># filter out the optional ones and the one we will automatically create</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">])</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">value</span><span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">]):</span>
 
                 <span class="c1"># key_list contains the metadata found in the configuration file with a valid value</span>
                 <span class="k">if</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ACDD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">key_list</span><span class="p">):</span>

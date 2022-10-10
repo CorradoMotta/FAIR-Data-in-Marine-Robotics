@@ -290,7 +290,7 @@ class metadataDB:
 
     def updateEntry(self, id, updatedEntry):
 
-        """ Update the specific entry by passing a new dictionary.
+        """ Updates the specific entry by passing a new dictionary.
         It can contain the whole set of keys value of any of the subset.
 
         Args:
@@ -306,7 +306,7 @@ class metadataDB:
 
     def removeEntry(self, id):
 
-        """ Delete the specific entry.
+        """ Deletes the specific entry.
 
         Args:
             id (str) : The database entry ID.

@@ -112,39 +112,53 @@ Integration and metadata check
 ------------------------------
 
 The notebook explains in details how to generate the NetCDF and add the global metadata.
-At the time of writing, the global metadata are set on a configuration file named ``conf.ini``. Then, the configuration file is taken in input from the notebook script, and the attributes where a value is found are added to the NetCDF, using ``xarray`` python package. **Note** that this procedure will be changed in future, where the configuration file will be automatically generated during a mission, and pre-filled with valid values whenever possible. Furthermore, the generated global metadata are checked against the table shown above, to verify that all mandatory elements are included. To do so, a light JSON database is generated, which includes all mandatory and optional elements. The JSON database is very simple and looks as the following snippet:
+At the time of writing, the global metadata are set on a configuration file named ``conf.ini``. This file can be automatically generate from the interface that controls the vehicle. Then, the configuration file is taken in input from the notebook script, and the attributes where a value is found are added to the NetCDF, using ``xarray`` python package. 
+
+Furthermore, the generated global metadata are checked against the table shown above, to verify that all mandatory elements are included. To do so, a light JSON database is generated, which includes all mandatory and optional elements. The JSON database is very simple and looks as the following snippet:
+
+
+.. _interface: https://github.com/CorradoMotta/ASV_interface
 
 .. code-block:: json
 
     "data": {
-        "103635848456058539": {
-            "name": "Abstract ",
-            "ACDD": "summary",
-            "required": true
+        "657500993870255894": {
+            "name": "Title",
+            "ACDD": "title",
+            "required": true,
+            "default": "",
+            "description": "A brief title for the dataset",
+            "auto": false
         },
-        "442385042757337709": {
+        "220784140157161391": {
+            "name": "Abstract",
+            "ACDD": "summary",
+            "required": true,
+            "default": "",
+            "description": "A short summary for dataset, the content and potential linkages etc.",
+            "auto": false
+        },
+        "338703899268240663": {
             "name": "keywords",
             "ACDD": "keywords",
-            "required": true
-        },
-        "289772503827451972": {
-            "name": "Conventions",
-            "ACDD": "Conventions",
-            "required": true
+            "required": true,
+            "default": "unmanned marine vehicles,marine robotics,autonomous systems",
+            "description": "A comma separated list of key words and phrases",
+            "auto": false
         }
 		
-At the moment, only three fields are saved. The name, the ACDD standard name and if it is mandatory. In this way, the validation is quickly done:
+At the moment, six fields are saved. The **name**, the **ACDD** standard name, if it is mandatorily **required**, the **default** value, if any, the **description** of the metadata, and if can be **automatically** generated from the dataset (e.g., Dataset northernmost latitude or Dataset start time). In this way, the validation is quickly done by using our own module:
 
 .. code-block:: python
 
-	# Opening JSON database
-	global_db = PysonDB('database/global_metadata.json')
+	# Opening JSON file
+	global_db = metadataDB.metadataDB('database/global_metadata.json')
 
 	# iterate over all the global metadata found in the database
-	for key, value in global_db.get_all().items():
+	for key, value in global_db.getAll().items():
 	
-		# filter out the optional ones
-		if(value['required']):
+		# filter out the optional ones and the one we will automatically create
+		if(value['required']) and not value['auto']):
 		
 			# key_list contains the metadata found in the configuration file with a valid value
 			if(value['ACDD'].lower() in key_list):
