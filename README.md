@@ -15,12 +15,20 @@ This is a work in progress. At the time of writing, this repository contains sev
 4. _fairdata_ folder: It contains our own python modules. Right now the only module present is _metadataDB_ which is the interface towards the JSON databases.
 
 ### Installation
+To download this repository, it is recommended to use git with the command `git clone`.
 
-The easiest way is to install anaconda. In the environment folder, you can find the environment.yml file with all packages used in this repository. Note that the first line of the yml file sets the new environment's name.
-Open the anaconda command line, navigate to the environment folder and digit:
+For installing all needed packages, the easiest way is to install [anaconda](https://www.anaconda.com/products/distribution) to manage the python environments.
+In the `environment` folder of this repository, you can find the `environment.yml` file with all packages used in this repository. Note that the first line of the yml file sets the new environment's name.
+After the installation, open the anaconda command line, navigate to the `environment` folder and digit:
 
-`conda env create -f environment.yml`
+`$ conda env create -f environment.yml`
 
-Then you can switch to that environment using:
+Then you can switch to the newly created environment using:
 
-`conda activate <env_name>`
+`$ conda activate <env_name>`
+
+Finally, to open the IDE for jupyter run
+
+`$ cd ..` to go back to the root repo folder
+
+`$ jupyter lab`
