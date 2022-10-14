@@ -17,7 +17,7 @@ This is a work in progress. At the time of writing, this repository contains sev
 ### Installation
 
 The easiest way is to install anaconda. In the environment folder, you can find the environment.yml file with all packages used in this repository. Note that the first line of the yml file sets the new environment's name.
-Open the anaconda command line and digit:
+Open the anaconda command line, navigate to the environment folder and digit:
 
 `conda env create -f environment.yml`
 
