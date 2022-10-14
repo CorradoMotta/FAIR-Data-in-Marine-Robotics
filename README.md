@@ -13,3 +13,14 @@ This is a work in progress. At the time of writing, this repository contains sev
 2. _netcdf_conventions.ipynb_: It aims to show how to add and possibly extract descriptive and domain specific metadata from NetCDF files using python. It takes raw data in input and creates FAIR NetCDF and ISO-199115-2 files in output. The notebook interacts with the previously created database and with a configuration file that contains the values given to the global metadata. More information are contained directly in the notebook.
 3. _nc_gen_script_example.py_: Simple script to generate netcdf files automatically based on the notebook example. It can be used to generate all nc files in once.
 4. _fairdata_ folder: It contains our own python modules. Right now the only module present is _metadataDB_ which is the interface towards the JSON databases.
+
+### Installation
+
+The easiest way is to install anaconda. In the environment folder, you can find the environment.yml file with all packages used in this repository. Note that the first line of the yml file sets the new environment's name.
+Open the anaconda command line and digit:
+
+`conda env create -f environment.yml`
+
+Then you can switch to that environment using:
+
+`conda activate <env_name>`
