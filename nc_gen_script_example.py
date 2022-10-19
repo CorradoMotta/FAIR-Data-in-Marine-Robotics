@@ -106,7 +106,7 @@ def main_script(log_folder, result_folder, conf_path):
                         break
 
             # import raw data
-            data = pd.read_table(filePath, delimiter = ',', header=[0,1])
+            data = pd.read_table(filePath, delimiter = ',', converters={('time', 'time'):str,('date', 'date'): str}, header=[0,1])
             data_columns = data.columns
 
             # Remove header
