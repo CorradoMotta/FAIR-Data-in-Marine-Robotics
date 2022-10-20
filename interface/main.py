@@ -12,6 +12,7 @@ if __name__ == "__main__":
     engine = QQmlApplicationEngine()
     qml_file = Path(__file__).parent / "main.qml"
     engine.load(QUrl.fromLocalFile(qml_file))
+    
 
     if not engine.rootObjects():
         sys.exit(-1)

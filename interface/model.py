@@ -28,8 +28,6 @@ class BaseModel(QAbstractListModel):
     def __init__(self, parent=None):
         super().__init__(parent=parent)
         self.metadata_list = self.populateFromDb()
-        #self.setMetadata()
-
 
     # return the number of rows
     def rowCount(self, parent=QModelIndex()):
@@ -90,8 +88,6 @@ class BaseModel(QAbstractListModel):
                                       "description": value["description"]})
         return metadata_list
                 
-        
-
     @Slot()
     def reset(self):
         print(len(self.metadata_list))
