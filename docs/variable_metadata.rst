@@ -2,6 +2,7 @@
 Variable Metadata
 *****************
 
+Check the <a class="reference external" href="variable_metadata_table.html">list</a>.
 We are currently working on identifying the correct names and attributes for our robotic and scientific variables following, when possible, the existing standards. We decided on a minimum set of attributes for each variable. Such attributes are taken from ACDD and CF conventions. The attributes should be:
 
 1. **long_name**: in case a standard_name is not found on CF convention, the long_name will assume that role. Otherwise standard_name and long_name coincide.
