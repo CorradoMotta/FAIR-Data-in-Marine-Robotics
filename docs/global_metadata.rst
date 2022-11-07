@@ -2,6 +2,8 @@
 Global Metadata
 ***************
 
+Check the `global metadata list <global_metadata_table.html>`_ now!
+
 With global metadata we refer to *descriptive metadata* which usually includes info such as title, author, subjects, keywords, publisher, urls, etc. Several standards exists such as DataCite, DublinCore and ISO 19115. They are mainly domain agnostic. 
 
 Global Metadata is the term used to identify descriptive metadata in the NetCDF files. Our objective is to use NetCDF format for our robotic data. Therefore, we would like to add the appropriate global metadata directly within the NetCDF file, following the existing standard.
