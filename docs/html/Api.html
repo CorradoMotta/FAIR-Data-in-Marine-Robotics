@@ -14,7 +14,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -45,6 +47,23 @@
 <li class="toctree-l3"><a class="reference internal" href="#other-information">Other information</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#metadataDB.Error"><code class="docutils literal notranslate"><span class="pre">Error</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#metadataDB.metadataDB"><code class="docutils literal notranslate"><span class="pre">metadataDB</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.add"><code class="docutils literal notranslate"><span class="pre">metadataDB.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.dict_exists"><code class="docutils literal notranslate"><span class="pre">metadataDB.dict_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.element_exists"><code class="docutils literal notranslate"><span class="pre">metadataDB.element_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.getAll"><code class="docutils literal notranslate"><span class="pre">metadataDB.getAll()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.getById"><code class="docutils literal notranslate"><span class="pre">metadataDB.getById()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.getEntry"><code class="docutils literal notranslate"><span class="pre">metadataDB.getEntry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.getId"><code class="docutils literal notranslate"><span class="pre">metadataDB.getId()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.id_exists"><code class="docutils literal notranslate"><span class="pre">metadataDB.id_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.removeEntry"><code class="docutils literal notranslate"><span class="pre">metadataDB.removeEntry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.unique_value_exists"><code class="docutils literal notranslate"><span class="pre">metadataDB.unique_value_exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadataDB.metadataDB.updateEntry"><code class="docutils literal notranslate"><span class="pre">metadataDB.updateEntry()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#metadataDB.notUniqueError"><code class="docutils literal notranslate"><span class="pre">notUniqueError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#metadataDB.uniqueKeyError"><code class="docutils literal notranslate"><span class="pre">uniqueKeyError</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -62,8 +81,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>API documentation</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">API documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Api.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -74,7 +93,7 @@
            <div itemprop="articleBody">
              
   <section id="api-documentation">
-<h1><a class="toc-backref" href="#id1">API documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this headline"></a></h1>
+<h1><a class="toc-backref" href="#id1">API documentation</a><a class="headerlink" href="#api-documentation" title="Permalink to this heading"></a></h1>
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -90,16 +109,18 @@
 </ul>
 </div>
 <span class="target" id="module-metadataDB"></span><section id="metadatadb">
-<h2><a class="toc-backref" href="#id2">metadataDB</a><a class="headerlink" href="#metadatadb" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">metadataDB</a><a class="headerlink" href="#metadatadb" title="Permalink to this heading"></a></h2>
 <p>Author:         Corrado Motta
 Date:           10/2022</p>
 <p>This module is a customized wrapper of PysonDB-V2, which implements a Lightweight JSON based database.
 Through the functions of this module it is possible to add, remove, edit and visualize the
 metadata collected in the database.</p>
 <section id="other-information">
-<h3><a class="toc-backref" href="#id3">Other information</a><a class="headerlink" href="#other-information" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id3">Other information</a><a class="headerlink" href="#other-information" title="Permalink to this heading"></a></h3>
 <p>This module requires the installation of PysonDB to work. Check <a class="reference external" href="https://pysondb.github.io/pysonDB-v2/">https://pysondb.github.io/pysonDB-v2/</a> for
 installing into your python environment.</p>
+</section>
+</section>
 <dl class="py exception">
 <dt class="sig sig-object py" id="metadataDB.Error">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metadataDB.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metadataDB.Error" title="Permalink to this definition"></a></dt>
@@ -360,8 +381,6 @@ query.</p>
 </dl>
 </dd></dl>
 
-</section>
-</section>
 </section>
 
 

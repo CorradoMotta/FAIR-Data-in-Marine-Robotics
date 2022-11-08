@@ -14,7 +14,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -56,8 +58,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Welcome to FAIR data in marine robotics’s documentation!</li>
+      <li><a href="#" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Welcome to FAIR data in marine robotics’s documentation!</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -68,7 +70,7 @@
            <div itemprop="articleBody">
              
   <section id="welcome-to-fair-data-in-marine-robotics-s-documentation">
-<h1>Welcome to FAIR data in marine robotics’s documentation!<a class="headerlink" href="#welcome-to-fair-data-in-marine-robotics-s-documentation" title="Permalink to this headline"></a></h1>
+<h1>Welcome to FAIR data in marine robotics’s documentation!<a class="headerlink" href="#welcome-to-fair-data-in-marine-robotics-s-documentation" title="Permalink to this heading"></a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
@@ -94,7 +96,7 @@
 <p>The aim of this documentation is to describe how to make robotic data FAIR (Findable, Accessible, Interoperable, and Reusable) by using a set of tools and scripts defined in python.</p>
 <p>See it on <a class="reference external" href="https://github.com/CorradoMotta/FAIR-data">GitHub</a>!</p>
 <section id="status">
-<h2>Status<a class="headerlink" href="#status" title="Permalink to this headline"></a></h2>
+<h2>Status<a class="headerlink" href="#status" title="Permalink to this heading"></a></h2>
 <p>This is a work in progress. At the time of writing, this repository contains several notebooks and python files. Here a short summary of the most important ones:</p>
 <ol class="arabic simple">
 <li><p><em>database.ipynb</em> : It shows how to create a light database in JSON format. Such database are used to store the standard names of global variables and the standard attributes of robotic and scientific variables. The products of such notebook are stored in the folder <code class="docutils literal notranslate"><span class="pre">database</span></code> and are used to fill the NetCDF files with standardized metadata.</p></li>
@@ -104,7 +106,7 @@
 </ol>
 </section>
 <section id="overall-picture">
-<h2>Overall picture<a class="headerlink" href="#overall-picture" title="Permalink to this headline"></a></h2>
+<h2>Overall picture<a class="headerlink" href="#overall-picture" title="Permalink to this heading"></a></h2>
 <p>The overall picture is represented in the following schema:</p>
 <img alt="_images/metadata_flow.jpg" src="_images/metadata_flow.jpg" />
 <p>The configuration file can be either created from the interface that control the vehicle or manually, by using the <code class="docutils literal notranslate"><span class="pre">conf_template</span></code> file provided in the <code class="docutils literal notranslate"><span class="pre">conf</span></code> folder. The telemetry file, in csv format and with two headers, one for the log name and one for the standard name, is created by the vehicle and saved in the vehicle persistent memory. These two files serve as input of our python scripts, which ideally are stored in the same machine where the interface is installed. The python scripts will connect to the light JSON databases using our own module named <code class="docutils literal notranslate"><span class="pre">metadataDB</span></code> to collect information about global and variables metadata. Such information are used to generate the final CF and ACDD compliant NetCDF files. A goal of this project is also to generate a ISO-19915 compliant file, which contains solely the metadata. However, this is not completed yet.</p>
@@ -120,12 +122,16 @@
 <li class="toctree-l1"><a class="reference internal" href="variable_metadata.html">Variable Metadata</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Api.html">API documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Api.html#metadatadb">metadataDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Api.html#metadataDB.Error"><code class="docutils literal notranslate"><span class="pre">Error</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Api.html#metadataDB.metadataDB"><code class="docutils literal notranslate"><span class="pre">metadataDB</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Api.html#metadataDB.notUniqueError"><code class="docutils literal notranslate"><span class="pre">notUniqueError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Api.html#metadataDB.uniqueKeyError"><code class="docutils literal notranslate"><span class="pre">uniqueKeyError</span></code></a></li>
 </ul>
 </li>
 </ul>
 </div>
 <section id="indices-and-tables">
-<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h3>
+<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
