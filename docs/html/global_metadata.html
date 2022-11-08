@@ -1,353 +1,43 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+
+<html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Metadata &mdash; FAIR data in marine robotics  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Variable Metadata" href="variable_metadata.html" />
-    <link rel="prev" title="Welcome to FAIR data in marine robotics’s documentation!" href="index.html" /> 
+<meta charset="utf-8"/>
+<meta content="width=device-width,
+					initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> FAIR data in marine robotics
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+<body>
+<div class="container">
+<h3>CNR-INM Standard Metadata</h3>
+<html><body><table class="table table-striped" id="tableID"><thead><tr><th>name</th><th>ACDD</th><th>required</th><th>default</th><th>description</th><th>auto</th></tr></thead><tbody><tr><td>Title</td><td>title</td><td>True</td><td></td><td>A brief title for the dataset</td><td>False</td></tr><tr><td>Abstract</td><td>summary</td><td>True</td><td></td><td>A short summary for dataset, the content and potential linkages etc.</td><td>False</td></tr><tr><td>keywords</td><td>keywords</td><td>True</td><td>unmanned marine vehicles,marine robotics,autonomous systems</td><td>A comma separated list of key words and phrases</td><td>False</td></tr><tr><td>Conventions</td><td>Conventions</td><td>True</td><td>ACDD-1.3,CF-1.6</td><td>A comma-separated list of the conventions that are followed by the dataset. For ACDD use 'ACDD-1.3'</td><td>False</td></tr><tr><td>keywords vocabulary</td><td>keywords_vocabulary</td><td>False</td><td></td><td>Guideline for the words/phrases in your "keywords" attribute, if any</td><td>False</td></tr><tr><td>PI name</td><td>creator_name</td><td>True</td><td></td><td>Name of the PI</td><td>False</td></tr><tr><td>PI email</td><td>creator_email</td><td>True</td><td></td><td>Email to the PI</td><td>False</td></tr><tr><td>PI institution</td><td>institution</td><td>True</td><td>CNR-INM</td><td>Affiliation of the PI</td><td>False</td></tr><tr><td>Dataset start time</td><td>time_coverage_start</td><td>True</td><td></td><td>ISO8601 reference for the dataset</td><td>True</td></tr><tr><td>Dataset end time</td><td>time_coverage_end</td><td>True</td><td></td><td>ISO8601 reference for the dataset</td><td>True</td></tr><tr><td>Dataset northernmost latitude</td><td>geospatial_lat_max</td><td>True</td><td></td><td>Geographical northernmost position of the dataset (rectangular box)</td><td>True</td></tr><tr><td>Dataset southernmost latitude</td><td>geospatial_lat_min</td><td>True</td><td></td><td>Geographical southernmost position of the dataset (rectangular box)</td><td>True</td></tr><tr><td>Dataset latitude units</td><td>geospatial_lat_units</td><td>True</td><td></td><td>Further refinement of the box</td><td>True</td></tr><tr><td>Dataset easternmost longitude</td><td>geospatial_lon_min</td><td>True</td><td></td><td>Geographical easternmost position of the dataset, positive east of Greenwich.</td><td>True</td></tr><tr><td>Dataset westernmost longitude</td><td>geospatial_lon_max</td><td>True</td><td></td><td>Geographical westernmost position of the dataset, negative west of Greenwich.</td><td>True</td></tr><tr><td>Dataset longitude units</td><td>geospatial_lon_units</td><td>True</td><td></td><td>Further refinement of the box</td><td>True</td></tr><tr><td>date created</td><td>date_created</td><td>True</td><td></td><td>The date on which the data was created.</td><td>True</td></tr><tr><td>Platform</td><td>platform</td><td>True</td><td></td><td>Name of the platform(s) that supported the sensor data used to create this data set or product.</td><td>False</td></tr><tr><td>Project long name</td><td>project</td><td>False</td><td></td><td>The scientific project that produced the data. Multiple names to be separated by comma.</td><td>False</td></tr><tr><td>License</td><td>license</td><td>True</td><td>Creative Commons</td><td>Describe the restrictions to data access and distribution</td><td>False</td></tr><tr><td>Dataset version</td><td>product_version</td><td>True</td><td>1</td><td>Version identifier of the data file or product as assigned by the data creator</td><td>False</td></tr><tr><td>Data center (URL)</td><td>publisher_url</td><td>False</td><td></td><td>URL to the data center hosting the data</td><td>False</td></tr><tr><td>Creator (URL)</td><td>creator_url</td><td>False</td><td></td><td>URL to creator or to information</td><td>False</td></tr><tr><td>standard_name_vocabulary</td><td>standard_name_vocabulary</td><td>False</td><td></td><td>The name of the controlled vocabulary from which variable standard names are taken</td><td>False</td></tr><tr><td>time_coverage_duration</td><td>time_coverage_duration</td><td>True</td><td></td><td>Describes the duration of the data set. Use ISO 8601:2004 duration format</td><td>True</td></tr><tr><td>time_coverage_resolution</td><td>time_coverage_resolution</td><td>True</td><td></td><td>Describes the targeted time period between each value in the data set. Use ISO 8601:2004 duration format</td><td>True</td></tr><tr><td>id</td><td>id</td><td>False</td><td></td><td>An identifier for the data set, it can be the DOI as well</td><td>False</td></tr><tr><td>processing_level</td><td>processing_level</td><td>False</td><td></td><td>A textual description of the processing (or quality control) level of the data</td><td>False</td></tr><tr><td>geospatial_vertical_max</td><td>geospatial_vertical_max</td><td>False</td><td></td><td>Describes the numerically larger vertical limit</td><td>False</td></tr><tr><td>geospatial_vertical_min</td><td>geospatial_vertical_min</td><td>False</td><td></td><td>Describes the numerically smaller vertical limit</td><td>False</td></tr><tr><td>geospatial_vertical_positive</td><td>geospatial_vertical_positive</td><td>False</td><td></td><td>"up" or "down". If down, vertical values are interpreted as 'depth'</td><td>False</td></tr><tr><td>geospatial_vertical_resolution</td><td>geospatial_vertical_resolution</td><td>False</td><td></td><td>Further refinement of the box</td><td>False</td></tr><tr><td>geospatial_vertical_units</td><td>geospatial_vertical_units</td><td>False</td><td></td><td>Further refinement of the box</td><td>False</td></tr></tbody></table></body></html>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Global Metadata</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#mandatory-attributes">Mandatory attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#optional-attributes">Optional attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#integration-and-metadata-check">Integration and metadata check</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="variable_metadata.html">Variable Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Api.html">API documentation</a></li>
-</ul>
-
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">FAIR data in marine robotics</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Global Metadata</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/global_metadata.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="global-metadata">
-<h1>Global Metadata<a class="headerlink" href="#global-metadata" title="Permalink to this headline"></a></h1>
-<p>Check the <a class="reference external" href="global_metadata_table.html">global metadata list</a> now!</p>
-<p>With global metadata we refer to <em>descriptive metadata</em> which usually includes info such as title, author, subjects, keywords, publisher, urls, etc. Several standards exists such as DataCite, DublinCore and ISO 19115. They are mainly domain agnostic.</p>
-<p>Global Metadata is the term used to identify descriptive metadata in the NetCDF files. Our objective is to use NetCDF format for our robotic data. Therefore, we would like to add the appropriate global metadata directly within the NetCDF file, following the existing standard.</p>
-<p>The ACDD convention (Attribute for Climate and Data Discovery) can be used to populate the global attributes. Such convention is adopted internationally and allows your NetCDF file to be self-describing, without the need of any additional file containing metadata information. When opened in python, using xarray, the dataset would look like the following:</p>
-<img alt="_images/global_variable.png" src="_images/global_variable.png" />
-<p>As in any NetCDF file, the three main elements are present: Dimensions, Coordinates and Variables. Besides that, we can see a number of Attributes. Such attributes are not bound to any variable, that indicates they are global.</p>
-<p>We agreed upon a set of minimum mandatory and optional global attributes to use in our datasets.</p>
-<section id="mandatory-attributes">
-<h2>Mandatory attributes<a class="headerlink" href="#mandatory-attributes" title="Permalink to this headline"></a></h2>
-<p>These attributes shall always be included during dataset generation.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 64%" />
-<col style="width: 18%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>ACDD</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Title</p></td>
-<td><p>A brief title for the dataset.</p></td>
-<td><p>title</p></td>
-</tr>
-<tr class="row-odd"><td><p>Abstract</p></td>
-<td><p>A short summary for dataset, the content and potential linkages etc.</p></td>
-<td><p>summary</p></td>
-</tr>
-<tr class="row-even"><td><p>keywords</p></td>
-<td><p>A comma separated list of key words and phrases.</p></td>
-<td><p>keywords</p></td>
-</tr>
-<tr class="row-odd"><td><p>Conventions</p></td>
-<td><p>A comma-separated list of the conventions that are followed by the dataset. For ACDD use ‘ACDD-1.3’</p></td>
-<td><p>Conventions</p></td>
-</tr>
-<tr class="row-even"><td><p>Principal investigator (PI)</p></td>
-<td><p>Name of the PI</p></td>
-<td><p>creator_name</p></td>
-</tr>
-<tr class="row-odd"><td><p>PI email</p></td>
-<td><p>Email to the PI</p></td>
-<td><p>creator_email</p></td>
-</tr>
-<tr class="row-even"><td><p>PI institution</p></td>
-<td><p>Affiliation of the PI</p></td>
-<td><p>institution</p></td>
-</tr>
-<tr class="row-odd"><td><p>Dataset start time</p></td>
-<td><p>ISO8601 reference for the dataset</p></td>
-<td><p>time_coverage_start</p></td>
-</tr>
-<tr class="row-even"><td><p>Dataset end time</p></td>
-<td><p>ISO8601 reference for the dataset</p></td>
-<td><p>time_coverage_end</p></td>
-</tr>
-<tr class="row-odd"><td><p>Dataset northernmost latitude</p></td>
-<td><p>Geographical northernmost position of the dataset (rectangular box)</p></td>
-<td><p>geospatial_lat_max</p></td>
-</tr>
-<tr class="row-even"><td><p>Dataset southernmost latitude</p></td>
-<td><p>Geographical southernmost position of the dataset (rectangular box)</p></td>
-<td><p>geospatial_lat_min</p></td>
-</tr>
-<tr class="row-odd"><td><p>Dataset latitude units</p></td>
-<td><p>Further refinement of the box</p></td>
-<td><p>geospatial_lat_units</p></td>
-</tr>
-<tr class="row-even"><td><p>Dataset easternmost longitude</p></td>
-<td><p>Geographical easternmost position of the dataset, positive east of Greenwich.</p></td>
-<td><p>geospatial_lon_min</p></td>
-</tr>
-<tr class="row-odd"><td><p>Dataset westernmost longitude</p></td>
-<td><p>Geographical westernmost position of the dataset, negative west of Greenwich.</p></td>
-<td><p>geospatial_lon_max</p></td>
-</tr>
-<tr class="row-even"><td><p>Dataset longitude units</p></td>
-<td><p>Further refinement of the box</p></td>
-<td><p>geospatial_lon_units</p></td>
-</tr>
-<tr class="row-odd"><td><p>date created</p></td>
-<td><p>The date on which the data was created.</p></td>
-<td><p>date_created</p></td>
-</tr>
-<tr class="row-even"><td><p>Dataset language</p></td>
-<td><p>Language used in the dataset. Should be English</p></td>
-<td><p>/</p></td>
-</tr>
-<tr class="row-odd"><td><p>Platform</p></td>
-<td><p>Name of the platform(s) that supported the sensor data used to create this data set or product.</p></td>
-<td><p>platform</p></td>
-</tr>
-<tr class="row-even"><td><p>License</p></td>
-<td><p>Describe the restrictions to data access and distribution.</p></td>
-<td><p>license</p></td>
-</tr>
-<tr class="row-odd"><td><p>Dataset version</p></td>
-<td><p>Version identifier of the data file or product as assigned by the data creator.</p></td>
-<td><p>product_version</p></td>
-</tr>
-<tr class="row-even"><td><p>time_coverage_duration</p></td>
-<td><p>Describes the duration of the data set. Use ISO 8601:2004 duration format.</p></td>
-<td><p>time_coverage_duration</p></td>
-</tr>
-<tr class="row-odd"><td><p>time_coverage_resolution</p></td>
-<td><p>Describes the targeted time period between each value in the data set. Use ISO 8601:2004 duration format.</p></td>
-<td><p>time_coverage_resolution</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="optional-attributes">
-<h2>Optional attributes<a class="headerlink" href="#optional-attributes" title="Permalink to this headline"></a></h2>
-<p>These attributes are optional for two reasons:</p>
-<ol class="arabic simple">
-<li><p>They may or may not be needed.</p></li>
-<li><p>They are not available during generation of NetcCDF, but are highly reccomended on a later stage (e.g. id).</p></li>
-</ol>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 64%" />
-<col style="width: 18%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>ACDD</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>keywords vocabulary</p></td>
-<td><p>Guideline for the words/phrases in your “keywords” attribute, if any</p></td>
-<td><p>keywords_vocabulary</p></td>
-</tr>
-<tr class="row-odd"><td><p>ISO Topic category</p></td>
-<td><p>List of topic categories for the dataset</p></td>
-<td><p>/</p></td>
-</tr>
-<tr class="row-even"><td><p>Project long name</p></td>
-<td><p>The scientific project that produced the data. Multiple names to be separated by comma.</p></td>
-<td><p>project</p></td>
-</tr>
-<tr class="row-odd"><td><p>Data center (URL)</p></td>
-<td><p>URL to the data center hosting the data.</p></td>
-<td><p>publisher_url</p></td>
-</tr>
-<tr class="row-even"><td><p>Creator (URL)</p></td>
-<td><p>URL to creator or to information</p></td>
-<td><p>creator_url</p></td>
-</tr>
-<tr class="row-odd"><td><p>standard_name_vocabulary</p></td>
-<td><p>The name of the controlled vocabulary from which variable standard names are taken.</p></td>
-<td><p>standard_name_vocabulary</p></td>
-</tr>
-<tr class="row-even"><td><p>id</p></td>
-<td><p>An identifier for the data set, it can be the DOI as well.</p></td>
-<td><p>id</p></td>
-</tr>
-<tr class="row-odd"><td><p>processing_level</p></td>
-<td><p>A textual description of the processing (or quality control) level of the data.</p></td>
-<td><p>processing_level</p></td>
-</tr>
-<tr class="row-even"><td><p>geospatial_vertical_max</p></td>
-<td><p>Describes the numerically larger vertical limit</p></td>
-<td><p>geospatial_vertical_max</p></td>
-</tr>
-<tr class="row-odd"><td><p>geospatial_vertical_min</p></td>
-<td><p>Describes the numerically smaller vertical limit</p></td>
-<td><p>geospatial_vertical_min</p></td>
-</tr>
-<tr class="row-even"><td><p>geospatial_vertical_positive</p></td>
-<td><p>“up” or “down”. If down, vertical values are interpreted as ‘depth’</p></td>
-<td><p>geospatial_vertical_positive</p></td>
-</tr>
-<tr class="row-odd"><td><p>geospatial_vertical_resolution</p></td>
-<td><p>Further refinement of the box</p></td>
-<td><p>geospatial_vertical_resolution</p></td>
-</tr>
-<tr class="row-even"><td><p>geospatial_vertical_units</p></td>
-<td><p>Further refinement of the box</p></td>
-<td><p>geospatial_vertical_units</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="integration-and-metadata-check">
-<h2>Integration and metadata check<a class="headerlink" href="#integration-and-metadata-check" title="Permalink to this headline"></a></h2>
-<p>The notebook explains in details how to generate the NetCDF and add the global metadata.
-At the time of writing, the global metadata are set on a configuration file named <code class="docutils literal notranslate"><span class="pre">conf.ini</span></code>. This file can be automatically generate from the interface that controls the vehicle. Then, the configuration file is taken in input from the notebook script, and the attributes where a value is found are added to the NetCDF, using <code class="docutils literal notranslate"><span class="pre">xarray</span></code> python package.</p>
-<p>Furthermore, the generated global metadata are checked against the table shown above, to verify that all mandatory elements are included. To do so, a light JSON database is generated, which includes all mandatory and optional elements. The JSON database is very simple and looks as the following snippet:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;657500993870255894&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Title&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ACDD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A brief title for the dataset&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;auto&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;220784140157161391&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Abstract&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ACDD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;summary&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A short summary for dataset, the content and potential linkages etc.&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;auto&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;338703899268240663&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;keywords&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ACDD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;keywords&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unmanned marine vehicles,marine robotics,autonomous systems&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A comma separated list of key words and phrases&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;auto&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-</pre></div>
-</div>
-<p>At the moment, six fields are saved. The <strong>name</strong>, the <strong>ACDD</strong> standard name, if it is mandatorily <strong>required</strong>, the <strong>default</strong> value, if any, the <strong>description</strong> of the metadata, and if can be <strong>automatically</strong> generated from the dataset (e.g., Dataset northernmost latitude or Dataset start time). In this way, the validation is quickly done by using our own module:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Opening JSON file</span>
-<span class="n">global_db</span> <span class="o">=</span> <span class="n">metadataDB</span><span class="o">.</span><span class="n">metadataDB</span><span class="p">(</span><span class="s1">&#39;database/global_metadata.json&#39;</span><span class="p">)</span>
-
-<span class="c1"># iterate over all the global metadata found in the database</span>
-<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">global_db</span><span class="o">.</span><span class="n">getAll</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-
-        <span class="c1"># filter out the optional ones and the one we will automatically create</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">])</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">value</span><span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">]):</span>
-
-                <span class="c1"># key_list contains the metadata found in the configuration file with a valid value</span>
-                <span class="k">if</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ACDD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">key_list</span><span class="p">):</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ACDD&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.. found&quot;</span><span class="p">)</span>
-
-                <span class="c1"># alert in case a mandatory metadata is not found.</span>
-                <span class="k">else</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ACDD&#39;</span><span class="p">],</span> <span class="s2">&quot;NOT found!</span><span class="se">\n\n</span><span class="s2">Please add a value for &quot;</span><span class="p">,</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ACDD&#39;</span><span class="p">])</span>
-                        <span class="k">break</span>
-</pre></div>
-</div>
-</section>
-</section>
-
-
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to FAIR data in marine robotics’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="variable_metadata.html" class="btn btn-neutral float-right" title="Variable Metadata" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2022, Corrado Motta.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.fancytable/dist/fancyTable.min.js"></script>
+<script type="text/javascript">
+				
+			$(document).ready(function(){
+			
+				$("#tableID").fancyTable({
+				sortColumn:0,
+				/* Setting pagination or enabling */
+				pagination: false,
+					globalSearch:true,
+					/* Exclude 2nd column from global search.*/
+				globalSearchExcludeColumns: [2],
+				onInit:function(){				
+				/* On initialization of table */
+								console.log({ element:this });
+									},
+				onUpdate:function(){
+				/* On update like search and sort of table */				
+					console.log({ element:this });
+				}
+					});						
+			});		
+		</script>
 </body>
 </html>
