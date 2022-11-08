@@ -82,7 +82,7 @@ Rectangle {
         Button {
             id: defaultButton
             text: qsTr("Default")
-            onClicked: console.log("not implemented")
+            onClicked: rp.model.default()
         }
 
         Button {
@@ -94,13 +94,13 @@ Rectangle {
         Button {
             id: goButton
             text: qsTr("Generate INI")
-            onClicked:console.log("not implemented")
+            onClicked: rp.model.generateINI()
         }
 
         Button {
             id: cancelButton
             text: qsTr("Quit")
-            onClicked: console.log("not implemented")
+            onClicked: Qt.quit()
         }
     }
     Item {

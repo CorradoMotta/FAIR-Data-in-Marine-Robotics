@@ -3,6 +3,7 @@ from PySide6.QtQml import QmlElement
 import os
 from os import path
 from os.path import dirname, abspath
+import configparser
 import sys
 sys.path.append(dirname(dirname(abspath(__file__))))
 # To interact with the database
@@ -71,6 +72,14 @@ class BaseModel(QAbstractListModel):
         else:
             ret = None
         return ret
+
+    def setData(self, index, value, role):
+
+        if not index.isValid():
+            return False
+        if role == self.valueRole:
+            self.metadata_list[index.row()]["value"] = value
+        return True
     
     def populateFromDb(self):
         
@@ -90,6 +99,30 @@ class BaseModel(QAbstractListModel):
                 
     @Slot()
     def reset(self):
-        print(len(self.metadata_list))
+        self.beginResetModel()
+        self.metadata_list = self.populateFromDb()  # should work without calling it ?
+        self.endResetModel()
+        return True
 
-    
+    @Slot()
+    def default(self):
+        for idx, data in enumerate(self.metadata_list):
+            self.metadata_list[idx]["value"] = data["defaultValue"]
+            self.dataChanged.emit(self.index(idx,0),self.index(idx,0), [self.valueRole])
+
+    @Slot()
+    def generateINI(self):
+
+        config = configparser.ConfigParser()
+        config.read('FILE.INI')
+        config.add_section('mandatory_global_attributes')
+        config.add_section('optional_global_attributes')
+        for idx, data in enumerate(self.metadata_list):
+            if(data["value"]):
+                if(data["isMandatory"]):
+                    config['mandatory_global_attributes'][data["acdd_name"]] = data["value"]   # create
+                else:
+                    config['optional_global_attributes'][data["acdd_name"]] = data["value"]
+
+        with open('FILE.INI', 'w') as configfile:    # save
+            config.write(configfile)
