@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,
+					initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<h3>CNR-INM Standard metadata</h3>
+<html><body><table class="table table-striped" id="tableID"><thead><tr><th>long_name</th><th>standard_name</th><th>units</th><th>coverage_content_type</th><th>comment</th><th>version</th></tr></thead><tbody><tr><td>date</td><td></td><td></td><td>physicalMeasurement</td><td>Date in format yyyymmdd</td><td>1.0</td></tr><tr><td>time</td><td>time</td><td>s</td><td>physicalMeasurement</td><td>Time in format hhmmss.ms</td><td>1.0</td></tr><tr><td>latitude</td><td>latitude</td><td>degree_north</td><td>physicalMeasurement</td><td>Latitude is positive northward; its units of degree_north (or equivalent) indicate this explicitly.</td><td>1.0</td></tr><tr><td>longitude</td><td>longitude</td><td>degree_east</td><td>physicalMeasurement</td><td>Longitude is positive eastward; its units of degree_east (or equivalent) indicate this explicitly.</td><td>1.0</td></tr><tr><td>projection_x_coordinate</td><td>projection_x_coordinate</td><td>m</td><td>auxiliaryInformation</td><td>x indicates a vector component along the grid x-axis, when this is not true longitude, positive with increasing x.</td><td>1.0</td></tr><tr><td>projection_y_coordinate</td><td>projection_y_coordinate</td><td>m</td><td>auxiliaryInformation</td><td>y indicates a vector component along the grid y-axis, when this is not true latitude, positive with increasing y.</td><td>1.0</td></tr><tr><td>horizontalAccuracy</td><td></td><td>m</td><td>physicalMeasurement</td><td>Horizontal accuracy represents the radius of the margin of error of the measurement</td><td>1.0</td></tr><tr><td>llhPositionValidFlags</td><td></td><td></td><td>auxiliaryInformation</td><td>Flag that indicates if the measurements is valid or not (1 for valid).</td><td>1.0</td></tr><tr><td>platform_roll</td><td>platform_roll</td><td>degree</td><td>physicalMeasurement</td><td>Roll rotation. The angle that identifies the rotation is usually represented with the phi letter.</td><td>1.0</td></tr><tr><td>platform_pitch</td><td>platform_pitch</td><td>degree</td><td>physicalMeasurement</td><td>Pitch rotation. The angle that identifies the rotation is usually represented with the theta letter.</td><td>1.0</td></tr><tr><td>platform_yaw</td><td>platform_yaw</td><td>degree</td><td>physicalMeasurement</td><td>Yaw is a rotation about the local vertical axis.The angle that identifies the rotation is usually represented with the psi letter.</td><td>1.0</td></tr><tr><td>platform_surge_rate_fore</td><td>platform_surge_rate_fore</td><td>m s-1</td><td>auxiliaryInformation</td><td>Surge rate is the rate of displacement along an axis that is perpendicular to the local vertical axis and is coplanar with the nominal forward motion direction of the platform. Typically represented with the u letter.</td><td>1.0</td></tr><tr><td>platform_sway_rate_starboard</td><td>platform_sway_rate_starboard</td><td>m s-1</td><td>auxiliaryInformation</td><td>Sway rate is the rate of displacement along an axis that is perpendicular to both the local vertical axis and the nominal forward motion direction of the platform. Typycally represented with the v letter.</td><td>1.0</td></tr><tr><td>platform_heave_rate_down</td><td>platform_heave_rate_down</td><td>m s-1</td><td>auxiliaryInformation</td><td>Heave rate is the rate of displacement along the local vertical axis. Down indicates that positive values of heave rate represent the platform moving down as viewed by an observer on top of the platform facing forward.</td><td>1.0</td></tr><tr><td>platform_speed_accuracy</td><td></td><td>m s-1</td><td>auxiliaryInformation</td><td>Speed accuracy represents the standard deviation of the measured speed.</td><td>1.0</td></tr><tr><td>platform_track</td><td></td><td>degree</td><td>auxiliaryInformation</td><td>Heading accuracy representes the standard deviation of the measured heading.</td><td>1.0</td></tr><tr><td>platform_speed_validity</td><td></td><td></td><td>auxiliaryInformation</td><td>Flag that indicates if the measured velocity is valid or not (1 for valid).</td><td>1.0</td></tr><tr><td>platform_roll_rate</td><td>platform_roll_rate</td><td>degree s-1</td><td>physicalMeasurement</td><td>Roll rate is the rate of rotation about an axis that is perpendicular to the local vertical axis and is coplanar with the nominal forward motion direction of the platform. Typically represented with the p letter.</td><td>1.0</td></tr><tr><td>platform_pitch_rate</td><td>platform_pitch_rate</td><td>degree s-1</td><td>physicalMeasurement</td><td>Pitch rate is the rate of rotation about an axis that is perpendicular to both the local vertical axis and the nominal forward motion direction of the platform. Typically represented with the "q" letter.</td><td>1.0</td></tr><tr><td>platform_yaw_rate</td><td>platform_yaw_rate</td><td>degree s-1</td><td>physicalMeasurement</td><td>Yaw rate is the rate of rotation about the local vertical axis. Typically represented with the r letter.</td><td>1.0</td></tr><tr><td>platform_surge_acceleration_fore</td><td></td><td>m s-2</td><td>auxiliaryInformation</td><td>Surge acceleration is the acceleration given along an axis that is perpendicular to the local vertical axis and is coplanar with the nominal forward motion direction of the platform.</td><td>1.0</td></tr><tr><td>platform_sway_acceleration_starboard</td><td></td><td>m s-2</td><td>auxiliaryInformation</td><td>Sway acceleration is the is the acceleration given along an axis that is perpendicular to both the local vertical axis and the nominal forward motion direction of the platform.</td><td>1.0</td></tr><tr><td>platform_heave_acceleration_down</td><td></td><td>m s-2</td><td>auxiliaryInformation</td><td>Heave acceleration is theis the acceleration given along the local vertical axis. Down indicates that positive values of heave rate represent the platform moving down as viewed by an observer on top of the platform facing forward.</td><td>1.0</td></tr><tr><td>azimuth_angle_reference</td><td></td><td>degree</td><td>auxiliaryInformation</td><td>The reference value of the given platform azimuth angle .</td><td>1.0</td></tr><tr><td>azimuth_angle</td><td></td><td>degree</td><td>physicalMeasurement</td><td>Platform azimuth angle is the horizontal angle between the line of sight from the observation point to the platform and a reference direction at the observation point, which is often due north.</td><td>1.0</td></tr><tr><td>thruster_speed_reference</td><td></td><td>rpm</td><td>auxiliaryInformation</td><td>The reference value of the given platform thrust speed .</td><td>1.0</td></tr><tr><td>thruster_speed</td><td></td><td>rpm</td><td>physicalMeasurement</td><td>Platform thrust in rpm.</td><td>1.0</td></tr><tr><td>thruster_force</td><td></td><td>N</td><td>physicalMeasurement</td><td>Platform force in Newton.</td><td>1.0</td></tr><tr><td>thruster_current</td><td></td><td>Nm</td><td>physicalMeasurement</td><td>Current of the thrust.</td><td>1.0</td></tr></tbody></table></body></html>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.fancytable/dist/fancyTable.min.js"></script>
+<script type="text/javascript">
+				
+			$(document).ready(function(){
+			
+				$("#tableID").fancyTable({
+				sortColumn:0,
+				/* Setting pagination or enabling */
+				pagination: false,
+					globalSearch:true,
+					/* Exclude 2nd column from global search.*/
+				globalSearchExcludeColumns: [2],
+				onInit:function(){				
+				/* On initialization of table */
+								console.log({ element:this });
+									},
+				onUpdate:function(){
+				/* On update like search and sort of table */				
+					console.log({ element:this });
+				}
+					});						
+			});		
+		</script>
+</body>
+</html>
