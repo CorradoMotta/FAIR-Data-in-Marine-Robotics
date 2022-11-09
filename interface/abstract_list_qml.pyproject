@@ -1,3 +1,3 @@
 {
-    "files": ["model.py","BasicMetadataInput.qml","main.py","main.qml","Metadata.qml","path.py"]
+    "files": ["Metadata.qml","BasicMetadataInput.qml","main.py","path.py","model.py","main.qml","Images/info.png","Images/system.png"]
 }

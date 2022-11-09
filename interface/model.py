@@ -8,6 +8,7 @@ import sys
 sys.path.append(dirname(dirname(abspath(__file__))))
 # To interact with the database
 from fairdata import metadataDB
+import default_values
 
 # To be used on the @QmlElement decorator
 # (QML_IMPORT_MINOR_VERSION is optional)
@@ -84,17 +85,38 @@ class BaseModel(QAbstractListModel):
     def populateFromDb(self):
         
         metadata_list = []
+        metadata_list_nm = [] # to append not mandatory elements afterwards
+
+        custom_default = default_values.default_ini('custom_default/default.ini')
+        custom_default.read_default()
+
         # Opening JSON file
         global_db = metadataDB.metadataDB('../database/global_metadata.json')
         for key, value in global_db.getAll().items():
             if(not value["auto"]):
-                metadata_list.append({"name": value["name"], 
-                                      "acdd_name": value["ACDD"], 
-                                      "value": "", 
-                                      "defaultValue": value["default"],
-                                      "isMandatory": value["required"],
-                                      "isAuto": value["auto"], 
-                                      "description": value["description"]})
+
+                # Adding custom default values
+                if value["ACDD"] in custom_default.default_dict:
+                    value["default"] = custom_default.default_dict[value["ACDD"]]
+
+                if(value["required"]):
+                    metadata_list.append({"name": value["name"], 
+                                          "acdd_name": value["ACDD"], 
+                                          "value": "", 
+                                          "defaultValue": value["default"],
+                                          "isMandatory": value["required"],
+                                          "isAuto": value["auto"], 
+                                          "description": value["description"]})
+                else:
+                    metadata_list_nm.append({"name": value["name"], 
+                                          "acdd_name": value["ACDD"], 
+                                          "value": "", 
+                                          "defaultValue": value["default"],
+                                          "isMandatory": value["required"],
+                                          "isAuto": value["auto"], 
+                                          "description": value["description"]})
+
+        metadata_list.extend(metadata_list_nm)
         return metadata_list
                 
     @Slot()
@@ -110,19 +132,39 @@ class BaseModel(QAbstractListModel):
             self.metadata_list[idx]["value"] = data["defaultValue"]
             self.dataChanged.emit(self.index(idx,0),self.index(idx,0), [self.valueRole])
 
-    @Slot()
-    def generateINI(self):
+    @Slot(bool, result = bool)
+    def generateINI(self, check_file):
+
+        path_name = 'conf.ini'
+        path_exist = path.exists(path_name)
+
+
+        if(check_file):
+            if(path_exist):
+                return True
+
+        if(path_exist):
+            # remove file
+            os.remove(path_name)
 
         config = configparser.ConfigParser()
-        config.read('FILE.INI')
-        config.add_section('mandatory_global_attributes')
-        config.add_section('optional_global_attributes')
+
         for idx, data in enumerate(self.metadata_list):
             if(data["value"]):
                 if(data["isMandatory"]):
+                    if(not config.has_section('mandatory_global_attributes')):
+                        config.add_section('mandatory_global_attributes')
                     config['mandatory_global_attributes'][data["acdd_name"]] = data["value"]   # create
                 else:
+                    if(not config.has_section('optional_global_attributes')):
+                        config.add_section('optional_global_attributes')
                     config['optional_global_attributes'][data["acdd_name"]] = data["value"]
 
-        with open('FILE.INI', 'w') as configfile:    # save
+        with open(path_name, 'w') as configfile:  # save
             config.write(configfile)
+
+        return False
+
+    @Slot(str)
+    def generateNC(self, nc_path):
+        print(nc_path)
