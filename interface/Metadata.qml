@@ -150,7 +150,7 @@ Rectangle {
             Layout.preferredHeight: 30
             Layout.preferredWidth: 100
             text: qsTr("Generate NetCDF")
-            onClicked: rp.model.generateNC(label_text.text)
+            onClicked: message_dialog_2.visible = true
         }
 
         Button {
@@ -171,12 +171,18 @@ Rectangle {
     FileDialog {
         id: fileDialog
         title: "Please choose a file"
-        //folder: shortcuts.home
         onAccepted: {
             label_text.text = fileDialog.currentFile
-            //var message = navigation_map.uploadFile(fileDialog.fileUrl)
-            //root.messagePrompt(message)
         }
+    }
+    MessageDialog {
+        id: message_dialog_2
+        title: "Note"
+        text: "This operation will overwrite existing ini files with what specified here."
+        informativeText: "Do you want to continue?"
+        buttons: MessageDialog.Ok | MessageDialog.Cancel
+        visible: false
+        onAccepted: messagePrompt(rp.model.generateNC(label_text.text))
     }
     MessageDialog {
         id: message_dialog
@@ -194,7 +200,4 @@ Rectangle {
         else messagePrompt("ini file generated!")
 
     }
-
-
-
 }

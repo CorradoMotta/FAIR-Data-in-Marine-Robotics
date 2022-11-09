@@ -6,9 +6,11 @@ from os.path import dirname, abspath
 import configparser
 import sys
 sys.path.append(dirname(dirname(abspath(__file__))))
+sys.path.append(dirname(dirname(abspath(__file__))))
 # To interact with the database
 from fairdata import metadataDB
 import default_values
+import nc_gen_script_example
 
 # To be used on the @QmlElement decorator
 # (QML_IMPORT_MINOR_VERSION is optional)
@@ -29,6 +31,8 @@ class BaseModel(QAbstractListModel):
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
+        # Opening JSON file
+        self.global_db = metadataDB.metadataDB('../database/global_metadata.json')
         self.metadata_list = self.populateFromDb()
 
     # return the number of rows
@@ -90,9 +94,7 @@ class BaseModel(QAbstractListModel):
         custom_default = default_values.default_ini('custom_default/default.ini')
         custom_default.read_default()
 
-        # Opening JSON file
-        global_db = metadataDB.metadataDB('../database/global_metadata.json')
-        for key, value in global_db.getAll().items():
+        for key, value in self.global_db.getAll().items():
             if(not value["auto"]):
 
                 # Adding custom default values
@@ -165,6 +167,19 @@ class BaseModel(QAbstractListModel):
 
         return False
 
-    @Slot(str)
+    @Slot(str, result = str)
     def generateNC(self, nc_path):
-        print(nc_path)
+
+        self.generateINI(False)
+
+        if(nc_path.startswith("file:///")):
+            nc_path = nc_path.replace("file:///", "")
+
+        if(os.path.exists(nc_path)):
+            result = nc_gen_script_example.main_script(nc_path, "results", "conf.ini")
+            if (result):
+                return "File(s) generated and saved in results folder."
+            else:
+                return "An error occurred. Please check the console for more info."
+        else: 
+            return "Input CSV file not found!"
