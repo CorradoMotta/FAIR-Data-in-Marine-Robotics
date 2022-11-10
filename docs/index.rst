@@ -35,7 +35,9 @@ This is a work in progress. At the time of writing, this repository contains sev
 
 3. *nc_gen_script_example.py*: Simple script to generate netcdf files automatically based on the notebook example. It can be used to generate all nc files in once.
 
-4. *fairdata* folder: It contains our own python modules. Right now the only module present is _metadataDB_ which is the interface towards the JSON databases.
+4. *fairdata* folder: It contains our own python modules. Right now the only module present is ``metadataDB`` which is the interface towards the JSON databases.
+
+5. *interface* folder: It contains an interface to fill the global metadata and to generate the netcdf files. More information on the dedicated section.
 
 ===============
 Overall picture
@@ -54,6 +56,7 @@ The configuration file can be either created from the interface that control the
    
    global_metadata
    variable_metadata
+   interface
    Api
 
 Indices and tables
