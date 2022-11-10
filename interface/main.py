@@ -1,3 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+====
+main
+====
+
+Author:         Corrado Motta  
+Date:           11/2022
+
+Main python file for global metadata interface.
+
+"""
+
 import sys
 from pathlib import Path
 

@@ -4,6 +4,9 @@
  * elements from the cpp model which in turn is generated from JSON
  * database.
  *
+ * Author: Corrado Motta
+ * Data: 11/2022
+ *
  *************************************************************************/
 
 import QtQuick 2.0
@@ -150,7 +153,7 @@ Rectangle {
             Layout.preferredHeight: 30
             Layout.preferredWidth: 100
             text: qsTr("Generate NetCDF")
-            onClicked: message_dialog_2.visible = true
+            onClicked: messagePrompt(rp.model.generateNC(label_text.text))
         }
 
         Button {

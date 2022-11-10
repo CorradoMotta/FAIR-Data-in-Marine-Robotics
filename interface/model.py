@@ -1,24 +1,58 @@
-from PySide6.QtCore import (QAbstractListModel, QByteArray, QModelIndex, Qt,Slot)
-from PySide6.QtQml import QmlElement
+# -*- coding: utf-8 -*-
+"""
+=====
+model
+=====
+
+Author:         Corrado Motta  
+Date:           11/2022
+
+This module implements the model view delegate pattern of Qt interfaces. 
+It reads a JSON database to get all global metadata and automatically updates the interface
+with all fields. It allows to generated NetCDF files by using the nc_gen_script.py methods.
+"""
+
+#-----------------------------------
+# list of packages
+#-----------------------------------
+
+# os miscellaneous
 import os
 from os import path
 from os.path import dirname, abspath
-import configparser
 import sys
 sys.path.append(dirname(dirname(abspath(__file__))))
-sys.path.append(dirname(dirname(abspath(__file__))))
-# To interact with the database
+
+# Qt packages
+from PySide6.QtCore import (QAbstractListModel, QByteArray, QModelIndex, Qt,Slot)
+from PySide6.QtQml import QmlElement
+
+# to parse ini files
+import configparser
+
+# our own modules
 from fairdata import metadataDB
 import default_values
-import nc_gen_script_example
+import nc_gen_script
 
 # To be used on the @QmlElement decorator
-# (QML_IMPORT_MINOR_VERSION is optional)
 QML_IMPORT_NAME = "BaseModel"
 QML_IMPORT_MAJOR_VERSION = 1
 
+#-----------------------------------
+# class
+#-----------------------------------
+
 @QmlElement
 class BaseModel(QAbstractListModel):
+
+    """ Class that extends the QAbstractListModel python class.
+    Roles are customized. The global metadata are stored within a list
+    of dictionaries populated by the JSON databases. 
+
+    Args:
+        parent (str): Widget parent. Default is None.
+    """
 
     # create my roles
     nameRole = Qt.UserRole + 1
@@ -35,13 +69,14 @@ class BaseModel(QAbstractListModel):
         self.global_db = metadataDB.metadataDB('../database/global_metadata.json')
         self.metadata_list = self.populateFromDb()
 
-    # return the number of rows
     def rowCount(self, parent=QModelIndex()):
+        # override. Gives the number of rows.
         return len(self.metadata_list)
 
-    # If your model is used within QML and requires roles other than the default ones 
-    # provided by the roleNames() function, you must override it.
     def roleNames(self):
+        # override. If your model is used within QML and requires roles other than the default ones 
+        # provided by the roleNames() function, you must override it.
+
         default = super().roleNames()
         default[self.nameRole] = QByteArray(b"name")
         default[self.acddNameRole] = QByteArray(b"acdd_name")
@@ -52,8 +87,8 @@ class BaseModel(QAbstractListModel):
         default[self.descriptionRole] = QByteArray(b"description")
         return default
 
-    # function to retrieve items from the list.
     def data(self, index, role: int):
+        # override. Function to retrieve items from the list.
 
         if not self.metadata_list:
             ret = None
@@ -79,6 +114,8 @@ class BaseModel(QAbstractListModel):
         return ret
 
     def setData(self, index, value, role):
+        # override. Function to set a new value for a specific role
+        # of one of your data
 
         if not index.isValid():
             return False
@@ -87,6 +124,13 @@ class BaseModel(QAbstractListModel):
         return True
     
     def populateFromDb(self):
+
+        """ Populates the model with global metadata from JSON database.
+        It also checks the custom default values and adds to the default section.
+
+        Returns:
+            list: List of dictionaries containing all fields of the JSON database entry.
+        """
         
         metadata_list = []
         metadata_list_nm = [] # to append not mandatory elements afterwards
@@ -123,19 +167,37 @@ class BaseModel(QAbstractListModel):
                 
     @Slot()
     def reset(self):
+
+        """ Reset the view by removing all values from the value entry.
+        """
+
         self.beginResetModel()
         self.metadata_list = self.populateFromDb()  # should work without calling it ?
         self.endResetModel()
-        return True
 
     @Slot()
     def default(self):
+
+        """ Adds the default values as values and display them.
+        """
+
         for idx, data in enumerate(self.metadata_list):
             self.metadata_list[idx]["value"] = data["defaultValue"]
             self.dataChanged.emit(self.index(idx,0),self.index(idx,0), [self.valueRole])
 
     @Slot(bool, result = bool)
     def generateINI(self, check_file):
+
+        """ Generates an ini file named conf.ini with all metadata that are filled. The file will
+        be located in this very same folder.
+
+        Args:
+            check_file (bool): If true will first check if a conf.ini file is already existing.
+
+        Returns:
+            bool: True if a file with the same name is already existing, false in case is not.
+                If True is returned a new file was NOT generated.
+        """
 
         path_name = 'conf.ini'
         path_exist = path.exists(path_name)
@@ -170,13 +232,25 @@ class BaseModel(QAbstractListModel):
     @Slot(str, result = str)
     def generateNC(self, nc_path):
 
-        self.generateINI(False)
+        """ Generates one or more NetCDF files by using nc_gen_script methods.
+
+        Args:
+            nc_path (str): Path to one specific CSV file or to a folder containing more CSV files.
+
+        Returns:
+            str: A message to display to the interface.
+        """
+
+        #self.generateINI(False)        
+        ini_dict = {} 
+        for idx, data in enumerate(self.metadata_list):
+            ini_dict[data["acdd_name"]] = data["value"]
 
         if(nc_path.startswith("file:///")):
             nc_path = nc_path.replace("file:///", "")
 
         if(os.path.exists(nc_path)):
-            result = nc_gen_script_example.main_script(nc_path, "results", "conf.ini")
+            result = nc_gen_script.main_script(nc_path, "results", ini_dict)
             if (result):
                 return "File(s) generated and saved in results folder."
             else:
