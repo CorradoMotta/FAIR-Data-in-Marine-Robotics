@@ -42,6 +42,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="global_metadata.html">Global Metadata</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variable_metadata.html">Variable Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Api.html">API documentation</a></li>
 </ul>
 
@@ -102,7 +103,8 @@
 <li><p><em>database.ipynb</em> : It shows how to create a light database in JSON format. Such database are used to store the standard names of global variables and the standard attributes of robotic and scientific variables. The products of such notebook are stored in the folder <code class="docutils literal notranslate"><span class="pre">database</span></code> and are used to fill the NetCDF files with standardized metadata.</p></li>
 <li><p><em>netcdf_conventions.ipynb</em>: It aims to show how to add and possibly extract descriptive and domain specific metadata from NetCDF files using python. It takes raw data in input and creates FAIR NetCDF and ISO-199115-2 files in output. The notebook interacts with the previously created database and with a configuration file that contains the values given to the global metadata. More information are contained directly in the notebook.</p></li>
 <li><p><em>nc_gen_script_example.py</em>: Simple script to generate netcdf files automatically based on the notebook example. It can be used to generate all nc files in once.</p></li>
-<li><p><em>fairdata</em> folder: It contains our own python modules. Right now the only module present is _metadataDB_ which is the interface towards the JSON databases.</p></li>
+<li><p><em>fairdata</em> folder: It contains our own python modules. Right now the only module present is <code class="docutils literal notranslate"><span class="pre">metadataDB</span></code> which is the interface towards the JSON databases.</p></li>
+<li><p><em>interface</em> folder: It contains an interface to fill the global metadata and to generate the netcdf files. More information on the dedicated section.</p></li>
 </ol>
 </section>
 <section id="overall-picture">
@@ -118,6 +120,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="variable_metadata.html">Variable Metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Api.html">API documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Api.html#metadatadb">metadataDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Api.html#metadataDB.Error"><code class="docutils literal notranslate"><span class="pre">Error</span></code></a></li>
