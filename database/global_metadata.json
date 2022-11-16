@@ -109,7 +109,7 @@
             "name": "Dataset latitude units",
             "ACDD": "geospatial_lat_units",
             "required": true,
-            "default": "",
+            "default": "degree_north",
             "description": "Further refinement of the box",
             "auto": true
         },
