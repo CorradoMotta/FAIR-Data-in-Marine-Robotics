@@ -165,7 +165,7 @@
             "name": "License",
             "ACDD": "license",
             "required": true,
-            "default": "Creative Commons",
+            "default": "",
             "description": "Describe the restrictions to data access and distribution",
             "auto": false
         },
