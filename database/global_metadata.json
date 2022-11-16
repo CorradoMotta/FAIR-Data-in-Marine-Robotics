@@ -133,7 +133,7 @@
             "name": "Dataset longitude units",
             "ACDD": "geospatial_lon_units",
             "required": true,
-            "default": "",
+            "default": "degree_east",
             "description": "Further refinement of the box",
             "auto": true
         },
