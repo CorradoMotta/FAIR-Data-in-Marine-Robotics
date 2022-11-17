@@ -109,8 +109,8 @@
             "name": "Dataset latitude units",
             "ACDD": "geospatial_lat_units",
             "required": true,
-            "default": "degree_north",
-            "description": "Further refinement of the box",
+            "default": "",
+            "description": "Unit for the dataset latitude. Default is \"degree_north\"",
             "auto": true
         },
         "204178080734947309": {
@@ -133,7 +133,7 @@
             "name": "Dataset longitude units",
             "ACDD": "geospatial_lon_units",
             "required": true,
-            "default": "degree_east",
+            "default": "",
             "description": "Further refinement of the box",
             "auto": true
         },
@@ -165,7 +165,7 @@
             "name": "License",
             "ACDD": "license",
             "required": true,
-            "default": "",
+            "default": "Creative Commons",
             "description": "Describe the restrictions to data access and distribution",
             "auto": false
         },
