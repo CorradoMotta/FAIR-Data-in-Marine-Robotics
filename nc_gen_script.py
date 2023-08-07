@@ -12,6 +12,8 @@ Terminal args:
 1. Path to folder where the csv log files are stored or to a specific CSV file.
 2. Path to folder where to save the generated nc files.
 3. Path and filename of the configuration file.
+4. Latitude name, if different from default "latitude"
+5. Longitude name, if different from default "longitude"
 
 It is assumed that the JSON database files are stored in the database folder.
 
@@ -20,10 +22,13 @@ How to run it:
 --------------
 
 from terminal:
-$ python nc_gen_script_example.py "new_data" "new_results" "conf/conf.ini"
+$ python nc_gen_script.py "new_data" "new_results" "conf/conf.ini"
 
 from an empty notebook:
-%run nc_gen_script_example.py "new_data" "new_results" "conf/conf.ini"
+%run nc_gen_script.py "new_data" "new_results" "conf/conf.ini"
+
+in case of custom name for lat and lon
+$ python nc_gen_scripte.py "new_data" "new_results" "conf/conf.ini" "NGC_latitude" "NGC_longitude" 
 
 """
 
@@ -56,15 +61,17 @@ import ntpath
 # to add date
 from datetime import date
 # to generate ISO19115
-from bas_metadata_library.standards.iso_19115_2 import MetadataRecordConfigV2, MetadataRecord
+#from bas_metadata_library.standards.iso_19115_2 import MetadataRecordConfigV2, MetadataRecord
 # for iso format
 from datetime import datetime
+# for regex
+import re
 
 #-----------------------------------
 # list of functions
 #-----------------------------------
 
-def main_script(log_folder, result_folder, ini_dict):
+def main_script(log_folder, result_folder, ini_dict, lat_name, lon_name):
 
     """ Main script method. Will check if the script should run for one or more CSV files.
 
@@ -84,7 +91,7 @@ def main_script(log_folder, result_folder, ini_dict):
     #checks if path is a file
     if(os.path.isfile(log_folder)):
         if(ntpath.split(log_folder)[1].split(".")[1] == "csv"):
-            result = file_to_nc(log_folder, result_folder, ini_dict)
+            result = file_to_nc(log_folder, result_folder, ini_dict, lat_name, lon_name)
         else:
             print("Entry {0} not valid. Only CSV files are supported".format(log_folder))
             result = False
@@ -93,7 +100,7 @@ def main_script(log_folder, result_folder, ini_dict):
         for file_name in os.listdir(log_folder):
             if(ntpath.split(file_name)[1].split(".")[1] == "csv"):
                 filePath = path.join(log_folder, file_name)
-                result = file_to_nc(filePath, result_folder, ini_dict)
+                result = file_to_nc(filePath, result_folder, ini_dict, lat_name, lon_name)
             else:
                 print("Entry {0} not valid. Only CSV files are supported".format(file_name))
                 result = False
@@ -126,7 +133,7 @@ def ini_to_dict(conf_path):
     return my_complete_dict
     
 
-def file_to_nc(filePath, result_folder, my_complete_dict):
+def file_to_nc(filePath, result_folder, my_complete_dict, lat_name, lon_name):
 
     """ Convert the CSV file to NetCDF following what is displayed in the notebooks.
 
@@ -172,9 +179,28 @@ def file_to_nc(filePath, result_folder, my_complete_dict):
     # import raw data
     data = pd.read_table(filePath, delimiter = ',', converters={('time', 'time'):str,('date', 'date'): str}, header=[0,1])
     data_columns = data.columns
-
     # Remove header
     data = data.droplevel(1, axis=1)
+    
+    # check for source instruments or methods
+    source_dict = {}
+    ndc = [] # new name filtered
+    mrs = ['[',']'] # markers
+    data_cln = [] # new multiindex data columns
+    regexPattern = r".*\{0}(.*)\{1}".format(mrs[0],mrs[1])
+    for key in data_columns:
+        cln = key[0]
+        if all([x in cln for x in mrs]):
+            clnu = cln.split("[")[0]
+            source_dict[clnu] = re.match(regexPattern, cln).group(1)
+            ndc.append(clnu)
+            data_cln.append((clnu,key[1]))
+        else:
+            ndc.append(cln)
+            data_cln.append((cln,key[1]))
+            
+    data.columns = ndc
+
 
     # join date and time
     data["datetime"] = data["date"].astype(str)+ " " + data["time"].astype(str)
@@ -184,11 +210,11 @@ def file_to_nc(filePath, result_folder, my_complete_dict):
     # add automatic global variables
     my_complete_dict["time_coverage_start"] = data["datetime"].min().isoformat()
     my_complete_dict["time_coverage_end"] =   data["datetime"].max().isoformat()
-    my_complete_dict["geospatial_lat_max"] =  data['latitude'].max()
-    my_complete_dict["geospatial_lat_min"] =  data['latitude'].min()
+    my_complete_dict["geospatial_lat_max"] =  data[lat_name].max()
+    my_complete_dict["geospatial_lat_min"] =  data[lat_name].min()
     my_complete_dict["geospatial_lat_units"] = "degree_north"
-    my_complete_dict["geospatial_lon_min"] =  data['longitude'].min()
-    my_complete_dict["geospatial_lon_max"] =  data['longitude'].max()
+    my_complete_dict["geospatial_lon_min"] =  data[lon_name].min()
+    my_complete_dict["geospatial_lon_max"] =  data[lon_name].max()
     my_complete_dict["geospatial_lon_units"] = "degree_east"
     my_complete_dict["date_created"] = datetime.now().isoformat()
     my_complete_dict["time_coverage_duration"] = (data["datetime"].max() - data["datetime"].min()).isoformat()
@@ -231,8 +257,9 @@ def file_to_nc(filePath, result_folder, my_complete_dict):
     variables = variable_db.getAll()
 
     # iterate over each variable in the table and look for it in the database.
-    for key in data_columns:
+    for key in data_cln:
         attr = variable_db.getEntry('long_name', key[1])
+        if(key[0] in source_dict): xr[key[0]].attrs["source"] = source_dict[key[0]]
         if(attr):
             for attr_name, value in attr[0].items():
                 if(attr_name!='version' and value):
@@ -257,18 +284,24 @@ if __name__ == "__main__":
 
     # check the arguments are correct
     try:
-        assert len(sys.argv) == 4
+        assert len(sys.argv) == 4 or len(sys.argv) == 6
 
     except AssertionError as err:
-        print("Fatal error. Exactly 3 argument expected, {0} given".format(len(sys.argv)-1))
+        print("Fatal error. Exactly 3 or 5 argument expected, {0} given".format(len(sys.argv)-1))
         sys.exit(0)
 
     log_folder = sys.argv[1]
     result_folder =  sys.argv[2]
     conf_folder = sys.argv[3]
+    lon_name = "longitude"
+    lat_name = "latitude"
+    
+    if(len(sys.argv) == 6):
+        lat_name = sys.argv[4]
+        lon_name = sys.argv[5]
     
     # convert ini file to dict
     ini_dict = ini_to_dict(conf_folder)
 
     # call main method
-    main_script(log_folder, result_folder, ini_dict)
+    main_script(log_folder, result_folder, ini_dict, lat_name, lon_name)
